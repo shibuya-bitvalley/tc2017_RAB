@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 import cv2
 
@@ -41,6 +42,9 @@ if __name__ == '__main__':
 
     video_path = 'videos/1/camera_0.avi'
     image_path = 'images/'
+
+    if not os.path.isdir(image_path):
+        os.makedirs(image_path)
 
     print video_path
 
