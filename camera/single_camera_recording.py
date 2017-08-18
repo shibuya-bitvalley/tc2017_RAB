@@ -32,7 +32,7 @@ def capture(camera_ID, video_number):
     print '\n'+'dafault value'
     print 'width: '+str(cap.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
     print 'height: '+str(cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
-    print 'frame rate: '+str(cap.get(cv2.cv.CV_CAP_PROP_FPS))
+    #print 'frame rate: '+str(cap.get(cv2.cv.CV_CAP_PROP_FPS))
     print 'brightness: '+str(cap.get(cv2.cv.CV_CAP_PROP_BRIGHTNESS))
     print 'contrast: '+str(cap.get(cv2.cv.CV_CAP_PROP_CONTRAST))
     print 'saturation: '+str(cap.get(cv2.cv.CV_CAP_PROP_SATURATION))+'\n'
