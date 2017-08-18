@@ -57,15 +57,15 @@ if __name__ == '__main__':
                         default=1,help='Number of trial')
     args = parser.parse_args()
 
-    w = 320
-    h = 240
+    w = 480
+    h = 270
     b = 0.498039215803
     c = 0.6
     s = 0.3
     f = 30
 
     # camera 0
-    i0= 0
+    #i0= 0
 
     # camera 1
     i1= 1
@@ -73,23 +73,22 @@ if __name__ == '__main__':
     # camera 2
     i2= 2
 
-    cap_0, rec_0 = capture(0, args.video_number, w, h, b, c, s, f)
+    #cap_0, rec_0 = capture(0, args.video_number, w, h, b, c, s, f)
     cap_1, rec_1 = capture(1, args.video_number, w, h, b, c, s, f)
     cap_2, rec_2 = capture(2, args.video_number, w, h, b, c, s, f)
 
     save_flag = False
-    cnt = 0
 
     while(True):
 
-        ret_0, frame_0 = cap_0.read()
+        #ret_0, frame_0 = cap_0.read()
         ret_1, frame_1 = cap_1.read()
         ret_2, frame_2 = cap_2.read()
 
 
-        if ret_0 == False:
-            print 'error: camera ' + str(i0)
-            break
+        # if ret_0 == False:
+        #     print 'error: camera ' + str(i0)
+        #     break
 
         if ret_1 == False:
             print 'error: camera ' + str(i1)
@@ -99,7 +98,7 @@ if __name__ == '__main__':
             print 'error: camera ' + str(i2)
             break
 
-        cv2.imshow('camera:'+str(i0), frame_0)
+        #cv2.imshow('camera:'+str(i0), frame_0)
         cv2.imshow('camera:'+str(i1), frame_1)
         cv2.imshow('camera:'+str(i2), frame_2)
 
@@ -113,13 +112,12 @@ if __name__ == '__main__':
             save_flag = True
 
         if save_flag:
-            cnt += 1
-            rec_0.write(frame_0)
+            #rec_0.write(frame_0)
             rec_1.write(frame_1)
             rec_2.write(frame_2)
 
-    cap_0.release()
-    rec_0.release()
+    #cap_0.release()
+    #rec_0.release()
 
     cap_1.release()
     rec_1.release()
