@@ -57,36 +57,25 @@ if __name__ == '__main__':
                         default=1,help='Number of trial')
     args = parser.parse_args()
 
+    w = 320
+    h = 240
+    b = 0.498039215803
+    c = 0.6
+    s = 0.3
+    f = 30
+
     # camera 0
     i0= 0
-    w0 = 640
-    h0 = 480
-    b0 = 0.498039215803
-    c0 = 0.20000000298
-    s0 = 0.109803922474
-    f0 = 30
 
     # camera 1
-    i1= 0
-    w1 = 640
-    h1 = 480
-    b1 = 0.498039215803
-    c1 = 0.20000000298
-    s1 = 0.109803922474
-    f1 = 30
+    i1= 1
 
     # camera 2
-    i2= 0
-    w2 = 640
-    h2 = 480
-    b2 = 0.498039215803
-    c2 = 0.20000000298
-    s2 = 0.109803922474
-    f2 = 30
+    i2= 2
 
-    cap_0, rec_0 = capture(i0, args.video_number, w0, h0, b0, c0, s0, f0)
-    cap_1, rec_1 = capture(i1, args.video_number, w1, h1, b1, c1, s1, f1)
-    cap_2, rec_2 = capture(i2, args.video_number, w2, h2, b2, c2, s2, f2)
+    cap_0, rec_0 = capture(0, args.video_number, w, h, b, c, s, f)
+    cap_1, rec_1 = capture(1, args.video_number, w, h, b, c, s, f)
+    cap_2, rec_2 = capture(2, args.video_number, w, h, b, c, s, f)
 
     save_flag = False
     cnt = 0
@@ -137,5 +126,3 @@ if __name__ == '__main__':
 
     cap_2.release()
     rec_2.release()
-
-    cv2.dstroyAllWindows()

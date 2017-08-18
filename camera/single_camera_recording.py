@@ -20,11 +20,12 @@ def initWriter(camera_ID, w, h, fps, save_path):
 # capture the video
 def capture(camera_ID, video_number):
 
-    width = 640
-    height = 480
+    width = 320
+    height = 240
     brightness = 0.498039215803
-    contrast = 0.20000000298
-    saturation = 0.109803922474
+    contrast = 0.6
+    saturation = 0.3
+    codec = 0x47504A4D
     fps = 30
 
     cap = cv2.VideoCapture(camera_ID)
@@ -42,6 +43,7 @@ def capture(camera_ID, video_number):
     cap.set(cv2.cv.CV_CAP_PROP_BRIGHTNESS, brightness)
     cap.set(cv2.cv.CV_CAP_PROP_CONTRAST, contrast)
     cap.set(cv2.cv.CV_CAP_PROP_SATURATION, saturation)
+    #cap.set(cv2.cv.CV_CAP_PROP_FOURCC('M','J','P','E','G'))
     cap.set(cv2.cv.CV_CAP_PROP_FPS, fps)
 
     cnt = 0
