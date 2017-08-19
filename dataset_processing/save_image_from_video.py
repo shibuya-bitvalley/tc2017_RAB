@@ -74,7 +74,7 @@ def video_to_images(video_path, image_path):
 
             elif 22000 <= im_cnt and im_cnt < 24000:
                 d_cnt = 12
-                
+
             elif 24000 <= im_cnt and im_cnt < 26000:
                 d_cnt = 13
 

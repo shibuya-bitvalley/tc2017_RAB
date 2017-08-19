@@ -66,7 +66,7 @@ def move(image_path, save_path):
 # rename image files
 def rename(image_path):
 
-    d_list = [str(x + 1) for x in range(7)]
+    d_list = [str(x + 1) for x in range(13)]
     print d_list
 
     for d in d_list:
@@ -85,9 +85,8 @@ def rename(image_path):
 
 if __name__ == '__main__':
 
-    #image_path = '../../dataset/images/from_video/origin/'
-    save_path = '../../dataset/images/from_video/renamed/'
+    image_path = '../../dataset/images/backgrounds/2017_08_18/camera_1/'
 
     #how_many(image_path)
     #move(image_path, save_path)
-    rename(save_path)
+    rename(image_path)
