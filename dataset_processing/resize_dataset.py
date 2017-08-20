@@ -36,7 +36,7 @@ def draw_rectangle(img, rec, rec_color, t):
 
 
 # load the dataset and display
-def display_dataset(dataset_path):
+def display_resized_dataset(dataset_path):
 
     size = 224
 
@@ -80,8 +80,11 @@ def display_dataset(dataset_path):
 # main
 if __name__ == '__main__':
 
-    dataset_path = '../../dataset/images/overlaped/for_training/sample/'
-    #dataset_path = '../../dataset/images/overlaped/for_training/'
+    #dataset_path = '../../dataset/images/overlaped/cource_2017/for_training/sample/'
+    #dataset_path = '../../dataset/images/overlaped/cource_2017/for_training/'
+
+    dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/sample/'
+    #dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/'
 
     #d = 1
     # d = 2
@@ -93,7 +96,8 @@ if __name__ == '__main__':
 
     #dataset_path = dataset_path + str(d) + '/'
 
-    display_dataset(dataset_path)
+
+    display_resized_dataset(dataset_path)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
