@@ -421,10 +421,10 @@ if __name__ == '__main__':
     human_image_path = '../../dataset/images/humans/'
     save_image_path = '../../dataset/images/overlaped/2017_08_18/for_training/'
 
-    d = 1
+    # d = 1
     # d = 2
     # d = 3
-    # d = 4
+    d = 4
     # d = 5
     # d = 6
     # d = 7
