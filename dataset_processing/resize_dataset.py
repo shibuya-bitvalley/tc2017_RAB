@@ -36,7 +36,7 @@ def draw_rectangle(img, rec, rec_color, t):
 
 
 # load the dataset and display
-def display_resized_dataset(dataset_path):
+def display_resized_dataset(dataset_path, save_path):
 
     size = 224
 
@@ -72,9 +72,11 @@ def display_resized_dataset(dataset_path):
 
         cv2.namedWindow('original data '+str(index), cv2.WINDOW_NORMAL)
         cv2.imshow('original data '+str(index),rec_img)
+        cv2.imwrite(save_path+'original_'+str(index)+'.jpg', rec_img)
 
         cv2.namedWindow('resized data '+str(index), cv2.WINDOW_NORMAL)
         cv2.imshow('resized data '+str(index),resized_rec_img)
+        cv2.imwrite(save_path+'resized_'+str(index)+'.jpg', resized_rec_img)
 
 
 # main
@@ -96,8 +98,12 @@ if __name__ == '__main__':
 
     #dataset_path = dataset_path + str(d) + '/'
 
+    save_path = '../../dataset/images/overlaped/2017_08_18/for_training/resized/'
 
-    display_resized_dataset(dataset_path)
+    if not os.path.isdir(save_path):
+        os.makedirs(save_path)
+
+    display_resized_dataset(dataset_path, save_path)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
