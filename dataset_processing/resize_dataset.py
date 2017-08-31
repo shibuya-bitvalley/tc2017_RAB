@@ -86,7 +86,7 @@ if __name__ == '__main__':
     #dataset_path = '../../dataset/images/overlaped/cource_2017/for_training/'
 
     #dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/sample/'
-    dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/'
+    dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/original/'
 
     #d = 1
     # d = 2

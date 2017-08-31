@@ -419,7 +419,7 @@ if __name__ == '__main__':
 
     background_image_path = '../../dataset/images/backgrounds/2017_08_18/camera_1/'
     human_image_path = '../../dataset/images/humans/'
-    save_image_path = '../../dataset/images/overlaped/2017_08_18/for_training/'
+    save_image_path = '../../dataset/images/overlaped/2017_08_18/for_training/original/'
 
     # d = 1
     # d = 2
