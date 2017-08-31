@@ -115,10 +115,17 @@ def check_rec_size(background_img, x, y, width, height):
     rec_width = x2-x1
     rec_height = y2 -y1
 
-    return center_x, center_y, rec_width, rec_height
+    center_x_dst = abs(center_x-background_width/2)
+
+    if center_x > background_width/2:
+        flipped_center_x = center_x - center_x_dst*2
+    else:
+        flipped_center_x = center_x + center_x_dst*2
+
+    return center_x, flipped_center_x, center_y, rec_width, rec_height
 
 
-# save label list
+# save rec list
 def save_rec_list(rec_list,file_address_name):
 
     f = open(file_address_name,'w')
@@ -196,6 +203,7 @@ def creating_dataset(background_image_path, human_image_path, save_image_path):
         cv2.setMouseCallback('overlapping', mouse_event)
 
         cv2.namedWindow('saved dataset', cv2.WINDOW_NORMAL)
+        cv2.namedWindow('saved dataset (fliped)', cv2.WINDOW_NORMAL)
 
         while (True):
 
@@ -282,8 +290,9 @@ def creating_dataset(background_image_path, human_image_path, save_image_path):
 
                 label_list.append(label)
                 cv2.imwrite(save_image_path+str(img_cnt)+'.jpg', overlapped_img)
+                flipped_overlapped_img = cv2.flip(overlapped_img,1)
 
-                center_x, center_y, rec_width, rec_height = \
+                center_x, flipped_center_x, center_y, rec_width, rec_height = \
                     check_rec_size(background_img, m_x, m_y, \
                     modified_human_img.shape[1], modified_human_img.shape[0])
 
@@ -304,10 +313,29 @@ def creating_dataset(background_image_path, human_image_path, save_image_path):
                 img_cnt += 1
                 human_cnt += 1
 
+                # save fliped image
+                cv2.imwrite(save_image_path+str(img_cnt)+'.jpg', flipped_overlapped_img)
+                rec_list.append([flipped_center_x, center_y, rec_width, rec_height])
+                label_list.append(label)
+                img_cnt += 1
+
+                flipped_dataset_img = flipped_overlapped_img
+
+                cv2.rectangle(flipped_dataset_img, \
+                              (flipped_center_x - rec_width/2, \
+                               center_y - rec_height/2),\
+                              (flipped_center_x + rec_width/2, \
+                               center_y + rec_height/2),\
+                              rec_color, 10)
+
+                cv2.circle(flipped_dataset_img, (flipped_center_x, center_y), 10, (86, 255, 92), -1)
+                cv2.imshow('saved dataset (fliped)', flipped_dataset_img)
+
             # save background image
             if key & 0xFF == ord("b"):
 
                 background_cnt += 1
+                rec_list.append([0, 0, 0, 0])
                 label_list.append(0)
                 cv2.imwrite(save_image_path+str(img_cnt)+'.jpg', background_img)
 
@@ -317,8 +345,16 @@ def creating_dataset(background_image_path, human_image_path, save_image_path):
                 dataset_img = background_img
 
                 cv2.imshow('saved dataset', dataset_img)
-                rec_list.append([0, 0, 0, 0])
                 img_cnt += 1
+
+                # save fliped image
+                rec_list.append([0, 0, 0, 0])
+                label_list.append(0)
+                flipped_background_img = cv2.flip(background_img,1)
+                cv2.imwrite(save_image_path+str(img_cnt)+'.jpg', flipped_background_img)
+                img_cnt += 1
+                cv2.imshow('saved dataset (fliped)', flipped_background_img)
+
 
             # show image counter
             if key & 0xFF == ord("c"):
@@ -350,6 +386,8 @@ def creating_dataset(background_image_path, human_image_path, save_image_path):
     save_label_list(label_list, save_image_path+'labels.txt')
     save_rec_list(rec_list, save_image_path+'rectangles.txt')
     cv2.destroyAllWindows()
+
+    print 'label list and rec list are saved!'
 
 
 # print how to use this script
@@ -383,13 +421,17 @@ if __name__ == '__main__':
     human_image_path = '../../dataset/images/humans/'
     save_image_path = '../../dataset/images/overlaped/2017_08_18/for_training/original/'
 
-    d = 1
+    # d = 1
     # d = 2
     # d = 3
     # d = 4
     # d = 5
     # d = 6
     # d = 7
+    # d = 8
+    # d = 9
+    # d = 10
+    d = 11
 
     background_image_path = background_image_path + str(d) + '/'
     save_image_path = save_image_path + str(d) + '/'

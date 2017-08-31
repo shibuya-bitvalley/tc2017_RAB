@@ -44,7 +44,7 @@ def noise(img):
     return gauss_img
 
 
-# save label list
+# save rec list
 def save_rec_list(rec_list,file_address_name):
 
     f = open(file_address_name,'w')
