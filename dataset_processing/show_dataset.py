@@ -56,15 +56,16 @@ if __name__ == '__main__':
     #dataset_path = '../../dataset/images/overlaped/cource_2017/for_training/'
 
     #dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/sample/'
-    dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/original/'
+    #dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/original/'
+    dataset_path = '../../dataset/images/overlaped/2017_08_18/for_training/increased/'
 
-    #d = 1
+    d = 1
     # d = 2
     # d = 3
     # d = 4
     # d = 5
     # d = 6
-    d = 7
+    # d = 7
 
     dataset_path = dataset_path + str(d) + '/'
 
