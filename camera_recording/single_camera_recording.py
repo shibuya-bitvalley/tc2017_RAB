@@ -89,8 +89,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Camera streaming')
     parser.add_argument('--ID', '-i', type=int, default=0,help='Camera ID')
-    parser.add_argument('--video_number', '-n', type=int, default=1,help='Number of trial')
+    parser.add_argument('--video_name', '-n', type=str, default=1,help='Number of trial')
     args = parser.parse_args()
 
-    capture(args.ID, args.video_number)
+    capture(args.ID, args.video_name)
     #cv2.dstroyAllWindows()
