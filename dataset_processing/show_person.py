@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     while(True):
 
-        d = random.randint(1,10)
+        d = random.randint(1,24)
 
         label_data = []
 
@@ -36,9 +36,9 @@ if __name__ == '__main__':
             label_data.append(int(label_str))
 
         data_N = len(label_data)
-        print data_N
 
-        image_index = random.randint(1,data_N)
+        image_index = random.randint(0,data_N-1)
+        print str(image_index)+'.jpg'
 
         img = cv2.imread(image_path+str(image_index)+'.jpg')
 
@@ -46,8 +46,10 @@ if __name__ == '__main__':
         width = img.shape[1]
 
         if label_data[image_index] == 1:
+            print "ORANGE"
             cv2.putText(img, "ORANGE", (5, height-20), fontType, 0.8, (0,165,255), 2, cv2.CV_AA)
         elif label_data[image_index] == 2:
+            print "BLUE"
             cv2.putText(img, "BLUE", (5, height-20), fontType, 0.8, (255,125,86), 2, cv2.CV_AA)
 
         cv2.imshow("image", img)

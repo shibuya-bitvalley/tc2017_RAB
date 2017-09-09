@@ -19,11 +19,13 @@ if __name__ == '__main__':
     total_image = 0
     total_orange = 0
     total_blue = 0
+    total_others = 0
 
-    for d in range(10):
+    for d in range(24):
 
         orange_cnt = 0
         blue_cnt = 0
+        others_cnt = 0
 
         label_data = []
 
@@ -50,17 +52,23 @@ if __name__ == '__main__':
             elif label_data[i] == 2:
                 blue_cnt += 1
 
+            elif label_data[i] == 0:
+                others_cnt += 1
+
         total_image += data_N
         total_orange += orange_cnt
         total_blue += blue_cnt
+        total_others += others_cnt
 
         print
         print 'directory: '+str(d+1)
         print ' image: '+str(data_N)
         print ' orange: '+str(orange_cnt)
         print ' blue: '+str(blue_cnt)
+        print ' others: '+str(others_cnt)
 
     print
     print 'total image: '+str(total_image)
     print 'total orange: '+str(total_orange)
     print 'total blue: '+str(total_blue)
+    print 'total others: '+str(total_others)
