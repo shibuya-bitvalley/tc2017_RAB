@@ -46,7 +46,6 @@ def capture(camera_ID, video_number):
     #cap.set(cv2.cv.CV_CAP_PROP_FOURCC('M','J','P','E','G'))
     cap.set(cv2.cv.CV_CAP_PROP_FPS, fps)
 
-    cnt = 0
     save_path = 'videos/' + str(video_number) + '/'
 
     if not os.path.isdir(save_path):
@@ -77,7 +76,6 @@ def capture(camera_ID, video_number):
             save_flag = True
 
         if save_flag:
-            cnt += 1
             rec.write(frame)
 
     cap.release()
@@ -89,7 +87,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Camera streaming')
     parser.add_argument('--ID', '-i', type=int, default=0,help='Camera ID')
-    parser.add_argument('--video_name', '-n', type=str, default=1,help='Number of trial')
+    parser.add_argument('--video_name', '-n', type=str, default=1,help='video file name')
     args = parser.parse_args()
 
     capture(args.ID, args.video_name)

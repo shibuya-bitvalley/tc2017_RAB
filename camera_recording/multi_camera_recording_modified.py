@@ -12,9 +12,9 @@ def initWriter(camera_ID, w, h, fps, save_path):
     #fourcc = cv2.cv.CV_FOURCC('D','I','B',' ')
     #fourcc = cv2.cv.CV_FOURCC('D','I','V','X')
     fourcc = cv2.cv.CV_FOURCC('F','L','V','1')
-    rec = cv2.VideoWriter(save_path+'camera_'+str(camera_ID)+'.avi', \
+    rec_ = cv2.VideoWriter(save_path+'camera_'+str(camera_ID)+'.avi', \
                           fourcc, fps, (w, h))
-    return rec
+    return rec_
 
 
 # capture the video
@@ -53,9 +53,13 @@ def capture(camera_ID, video_number, width, height, brightness, contrast, satura
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Camera streaming')
-    parser.add_argument('--video_number', '-n', type=str, \
-                        default=1,help='Number of trial')
+    parser.add_argument('--video_name', '-n', type=str, \
+                        default=1,help='video file name')
+    parser.add_argument('--camera_ID', '-i', nargs='*', type=int,\
+                        default=0,help='camera id')
     args = parser.parse_args()
+
+    ID_list = args.camera_ID
 
     w = 480
     h = 270
@@ -64,43 +68,29 @@ if __name__ == '__main__':
     s = 0.3
     f = 30
 
-    # camera 0
-    i0= 0
+    camera_N = len(ID_list)
 
-    # camera 1
-    i1= 1
+    cap = [0]*camera_N
+    rec = [0]*camera_N
 
-    # camera 2
-    #i2= 2
-
-    cap_0, rec_0 = capture(0, args.video_number, w, h, b, c, s, f)
-    cap_1, rec_1 = capture(1, args.video_number, w, h, b, c, s, f)
-    #cap_2, rec_2 = capture(2, args.video_number, w, h, b, c, s, f)
+    for i in range(camera_N):
+        cap[i], rec[i] = capture(ID_list[i], args.video_name, w, h, b, c, s, f)
 
     save_flag = False
 
+    ret = [0]*camera_N
+    frame = [0]*camera_N
+
     while(True):
 
-        ret_0, frame_0 = cap_0.read()
-        ret_1, frame_1 = cap_1.read()
-        #ret_2, frame_2 = cap_2.read()
+        for i in range(camera_N):
+            ret[i], frame[i] = cap[i].read()
 
+            if ret[i] == False:
+                print 'error: camera ' + str(ID_list[i])
+                break
 
-        if ret_0 == False:
-            print 'error: camera ' + str(i0)
-            break
-
-        if ret_1 == False:
-            print 'error: camera ' + str(i1)
-            break
-
-        # if ret_2 == False:
-        #     print 'error: camera ' + str(i2)
-        #     break
-
-        cv2.imshow('camera:'+str(i0), frame_0)
-        cv2.imshow('camera:'+str(i1), frame_1)
-        #cv2.imshow('camera:'+str(i2), frame_2)
+            cv2.imshow('camera:'+str(ID_list[i]), frame[i])
 
         k = cv2.waitKey(1)
 
@@ -112,15 +102,10 @@ if __name__ == '__main__':
             save_flag = True
 
         if save_flag:
-            rec_0.write(frame_0)
-            rec_1.write(frame_1)
-            #rec_2.write(frame_2)
+            for i in range(camera_N):
+                rec[i].write(frame[i])
 
-    cap_0.release()
-    rec_0.release()
-
-    cap_1.release()
-    rec_1.release()
-
-    # cap_2.release()
-    # rec_2.release()
+    print 'finished'
+    for i in range(camera_N):
+        cap[i].release()
+        rec[i].release()
