@@ -4,6 +4,7 @@ __pycache__/
 data/
 results/
 result/
+*model/
 *result.jpg
 *.avi
 *.model

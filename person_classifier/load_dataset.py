@@ -98,7 +98,8 @@ def generate_random_array(images_array, labels_array):
 def load_dataset(train_N, validation_N):
 
     # 1. load txt file (image file names and labels)
-    txt_path = 'data/'
+    #txt_path = 'data/'
+    txt_path = 'data1/'
     images_list, labels_list = load_data(txt_path,'train_validation_x.txt','train_validation_y.txt')
 
     images_array = np.array(images_list)
@@ -122,6 +123,31 @@ def load_dataset(train_N, validation_N):
     return train_images, train_labels, validation_images, validation_labels
 
 
+# load dataset for training
+def load_test_dataset(test_N):
+
+    # 1. load txt file (image file names and labels)
+    #txt_path = 'data/'
+    txt_path = 'data1/'
+    images_list, labels_list = load_data(txt_path,'test_x.txt','test_y.txt')
+
+    images_array = np.array(images_list)
+    labels_array = np.array(labels_list)
+
+    print images_array.shape
+    print labels_array.shape
+
+    print 'total image N: ' + str(len(images_array))
+
+    # 2. permutation
+    random_images_array, random_labels_array = generate_random_array(images_array, labels_array)
+
+    # 3. pick up dataset for training and validation
+    test_images = random_images_array[0:test_N]
+    test_labels = random_labels_array[0:test_N]
+
+    return test_images, test_labels
+
 
 # main
 if __name__ == '__main__':
@@ -135,8 +161,10 @@ if __name__ == '__main__':
 
     train_N = 170000
     validation_N = 20000
+    test_N = 100
 
     Xtr, Ytr, Xv, Yv = load_dataset(train_N, validation_N)
+    Xts, Yts = load_test_dataset(test_N)
 
     print type(Xtr[0])
     print type(Ytr[0])
@@ -147,4 +175,8 @@ if __name__ == '__main__':
     print Xv.shape
     print Yv.shape
 
-    show_dataset(Xtr, Ytr)
+    print Xts.shape
+    print Yts.shape
+
+    #show_dataset(Xtr, Ytr)
+    show_dataset(Xts, Yts)

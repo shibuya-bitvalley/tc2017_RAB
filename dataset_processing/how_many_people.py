@@ -21,7 +21,15 @@ if __name__ == '__main__':
     total_blue = 0
     total_others = 0
 
-    for d in range(24):
+    dir_1 = 1
+    dir_2 = 24
+
+    d_range_1 = range(1,15)
+    d_range_2 = [17,20,21,22,23,24]
+    d_range_1.extend(d_range_2)
+
+    #for d in range(dir_1,dir_2+1):
+    for d in d_range_1:
 
         orange_cnt = 0
         blue_cnt = 0
@@ -29,7 +37,7 @@ if __name__ == '__main__':
 
         label_data = []
 
-        image_path = dataset_path + str(d+1) + '/'
+        image_path = dataset_path + str(d) + '/'
 
         label_file = open(image_path+'labels.txt','r')
 
@@ -61,7 +69,7 @@ if __name__ == '__main__':
         total_others += others_cnt
 
         print
-        print 'directory: '+str(d+1)
+        print 'directory: '+str(d)
         print ' image: '+str(data_N)
         print ' orange: '+str(orange_cnt)
         print ' blue: '+str(blue_cnt)

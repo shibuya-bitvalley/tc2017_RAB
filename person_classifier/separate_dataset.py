@@ -21,10 +21,13 @@ def save_list(label_list,file_address_name):
 # main
 if __name__ == '__main__':
 
-    train_validation_N = 190000
-    test_N = 19000
+    # train_validation_N = 190000
+    # test_N = 19000
+    # txt_path = 'data/'
 
-    txt_path = 'data/'
+    train_validation_N = 150000
+    test_N = 20000
+    txt_path = 'data1/'
 
     all_images_file = open(txt_path+'images.txt','r')
     all_labels_file = open(txt_path+'labels.txt','r')

@@ -37,7 +37,8 @@ import network_structure as nn
 # load image data from file name
 def myConverter(batch, device, padding=None):
 
-    size = 100
+    # size = 100
+    size = 50
 
     newBatch = []
     del newBatch
@@ -68,18 +69,19 @@ def myConverter(batch, device, padding=None):
 if __name__ == '__main__':
 
     # Load CNN model
-    model = nn.CNN_classifier()
+    #model = nn.CNN_classifier()
+    model = nn.CNN_classifier2()
 
     # Setup optimizer
     optimizer = chainer.optimizers.Adam()
     optimizer.setup(model)
 
-    train_N = 100000
-    validation_N = 1000
+    train_N = 80000
+    validation_N = 8000
 
     # parse args
     parser = argparse.ArgumentParser(description='CIFAR10 CLASSIFER')
-    parser.add_argument('--batchsize', '-b', type=int, default=100,
+    parser.add_argument('--batchsize', '-b', type=int, default=200,
                         help='Number of images in each mini batch')
     parser.add_argument('--epoch', '-e', type=int, default=10,
                         help='Number of sweeps over the dataset to train')
@@ -121,7 +123,7 @@ if __name__ == '__main__':
     trainer = training.Trainer(updater, (args.epoch, 'epoch'))
     trainer.extend(extensions.Evaluator(validation_iter, model, device=args.gpu, converter=myConverter))
     trainer.extend(extensions.LogReport())
-    trainer.extend(extensions.PrintReport(['epoch', 'main/loss', 'validation/main/loss']))
+    trainer.extend(extensions.PrintReport(['epoch', 'main/loss', 'validation/main/loss','main/accuracy', 'validation/main/accuracy']))
     #trainer.extend(extensions.PrintReport(['epoch', 'main/loss']))
     trainer.extend(extensions.ProgressBar())
     trainer.run()
