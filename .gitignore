@@ -3,6 +3,7 @@ images/
 __pycache__/
 data/
 results/
+result/
 *result.jpg
 *.avi
 *.model
