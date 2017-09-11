@@ -64,23 +64,27 @@ def validation(size,model,x,y):
 #main
 if __name__ == '__main__':
 
-    test_N = 100
+    test_N = 1000
 
-    model_path = 'third_model/'
+    # model_path = 'thibault_model/'
+    # model_name = 'cnn_gpu.model'
+    # size = 50
+    # model = nn.CNN_thibault()
+
+    model_path = 'thibault_model2/'
     model_name = 'cnn_gpu.model'
-    size = 100
-
-    model = nn.CNN_classifier2()
+    size = 50
+    model = nn.CNN_thibault()
 
     serializers.load_npz(model_path+model_name, model)
     optimizer = chainer.optimizers.Adam()
     optimizer.setup(model)
 
-    # Xts, Yts = ld.load_test_dataset(test_N)
-    # Ye = validation(size,model,Xts,Yts)
+    Xts, Yts = ld.load_test_dataset(test_N)
+    Ye = validation(size,model,Xts,Yts)
 
-    Xtr, Ytr, Xv, Yv = ld.load_dataset(10, 100)
-    Ye = validation(size,model,Xv,Yv)
+    # Xtr, Ytr, Xv, Yv = ld.load_dataset(10, 100)
+    # Ye = validation(size,model,Xv,Yv)
 
     #v.loss_visualizer(model_path)
     plt.show()

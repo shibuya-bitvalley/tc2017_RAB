@@ -11,7 +11,81 @@ from chainer import reporter
 
 
 # networks
-# first second model
+# thibault_model, thibault_model2
+class CNN_thibault(chainer.Chain):
+
+    def __init__(self, train= True):
+        super(CNN_thibault, self).__init__(
+            conv1 = L.Convolution2D(3, 3, 3, stride=1),
+            conv2 = L.Convolution2D(3, 3, 3, pad=1),
+            l1 = L.Linear(432, 100),
+            lo = L.Linear(100, 2),
+            bn1 = L.BatchNormalization(3),
+        )
+        self.train = train
+
+    def clear(self):
+        self.loss = None
+        self.accuracy = None
+        self.h = None
+
+    def forward(self, x):
+        h = F.relu(self.conv1(x))
+        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
+        h = F.relu(self.conv2(h))
+        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
+        h = F.relu(self.l1(h))
+        y = self.lo(h)
+        return y
+
+    def __call__(self, x, t):
+        self.clear()
+        y = self.forward(x)
+        self.loss = F.softmax_cross_entropy(y, t)
+        reporter.report({'loss': self.loss}, self)
+        self.accuracy = accuracy.accuracy(y, t)
+        reporter.report({'accuracy': self.accuracy}, self)
+        return self.loss
+
+
+# model_thibault with BatchNormalization
+class CNN_classifier3(chainer.Chain):
+
+    def __init__(self, train= True):
+        super(CNN_classifier3, self).__init__(
+            conv1 = L.Convolution2D(3, 3, 3, stride=1),
+            conv2 = L.Convolution2D(3, 3, 3, pad=1),
+            l1 = L.Linear(432, 100),
+            lo = L.Linear(100, 2),
+            bn1 = L.BatchNormalization(3),
+        )
+        self.train = train
+
+    def clear(self):
+        self.loss = None
+        self.accuracy = None
+        self.h = None
+
+    def forward(self, x):
+        h = F.relu(self.bn1(self.conv1(x)))
+        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
+        h = F.relu(self.bn1(self.conv2(h)))
+        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
+        h = F.relu(self.l1(h))
+        y = self.lo(h)
+        return y
+
+    def __call__(self, x, t):
+        self.clear()
+        y = self.forward(x)
+        self.loss = F.softmax_cross_entropy(y, t)
+        reporter.report({'loss': self.loss}, self)
+        self.accuracy = accuracy.accuracy(y, t)
+        reporter.report({'accuracy': self.accuracy}, self)
+        return self.loss
+
+
+# first model
 class CNN_classifier(chainer.Chain):
 
     def __init__(self, train= True):
@@ -109,44 +183,6 @@ class CNN_classifier_test(chainer.Chain):
         h = F.max_pooling_2d(F.relu(h), 2, stride=2)
         h = F.relu(self.l1(h))
         h = F.relu(self.l2(h))
-        y = self.lo(h)
-        return y
-
-    def __call__(self, x, t):
-        self.clear()
-        y = self.forward(x)
-        self.loss = F.softmax_cross_entropy(y, t)
-        reporter.report({'loss': self.loss}, self)
-        self.accuracy = accuracy.accuracy(y, t)
-        reporter.report({'accuracy': self.accuracy}, self)
-        return self.loss
-
-
-# networks
-# third model
-class CNN_classifier2(chainer.Chain):
-
-    def __init__(self, train= True):
-        super(CNN_classifier2, self).__init__(
-            conv1 = L.Convolution2D(3, 6, 3, stride=1),
-            conv2 = L.Convolution2D(6, 6, 3, pad=1),
-            l1 = L.Linear(294, 100),
-            lo = L.Linear(100, 2),
-            bn1 = L.BatchNormalization(6),
-        )
-        self.train = train
-
-    def clear(self):
-        self.loss = None
-        self.accuracy = None
-        self.h = None
-
-    def forward(self, x):
-        h = F.relu(self.bn1(self.conv1(x)))
-        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
-        h = F.relu(self.bn1(self.conv2(h)))
-        h = F.max_pooling_2d(F.relu(h), 3, stride=2)
-        h = F.relu(self.l1(h))
         y = self.lo(h)
         return y
 

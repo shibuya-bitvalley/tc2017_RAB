@@ -46,14 +46,14 @@ def load_dataset(dataset_path):
 if __name__ == '__main__':
 
     load_path = '../../dataset/images/overlaped/2017_08_18/for_training/humans/'
-    save_path = '../person_classifier_2_class/data/'
+    save_path = '../person_classifier_2_class/data1/'
 
     dir_1 = 1
     dir_2 = 24
 
-    # d_range_1 = range(1,15)
-    # d_range_2 = [17,20,21,22,23,24]
-    # d_range_1.extend(d_range_2)
+    d_range_1 = range(1,5)
+    d_range_2 = [11,12,13,17,20,21,22,23,24]
+    d_range_1.extend(d_range_2)
 
     all_images = []
     all_labels = []
@@ -61,8 +61,8 @@ if __name__ == '__main__':
     if not os.path.isdir(save_path):
         os.makedirs(save_path)
 
-    for d in range(dir_1,dir_2+1):
-    # for d in d_range_1:
+    #for d in range(dir_1,dir_2+1):
+    for d in d_range_1:
 
         dataset_path = load_path + str(d) + '/'
 

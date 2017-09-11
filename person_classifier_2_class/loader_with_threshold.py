@@ -27,7 +27,7 @@ def validation(size,model,x,y):
     success_counter = 0
     end_flag = False
 
-    th = 10
+    th = 5
 
     for i in range(len(x)):
 
@@ -44,7 +44,7 @@ def validation(size,model,x,y):
         label =  np.argmax(validation_output)
 
 
-        if label==1 or label==2:
+        if label==1 :
             if validation_output[0][label] < th:
                 label = 0
 
@@ -74,23 +74,23 @@ def validation(size,model,x,y):
 #main
 if __name__ == '__main__':
 
-    test_N = 10
+    test_N = 100
 
-    model_path = 'second_model/'
+    model_path = 'first_model/'
     model_name = 'cnn_gpu.model'
-    size = 100
+    size = 32
 
-    model = nn.CNN_classifier_test()
+    model = nn.CNN_classifier2()
 
     serializers.load_npz(model_path+model_name, model)
     optimizer = chainer.optimizers.Adam()
     optimizer.setup(model)
 
-    # Xts, Yts = ld.load_test_dataset(test_N)
-    # Ye = validation(size,model,Xts,Yts)
+    Xts, Yts = ld.load_test_dataset(test_N)
+    Ye = validation(size,model,Xts,Yts)
 
-    Xtr, Ytr, Xv, Yv = ld.load_dataset(100, 100)
-    Ye = validation(size,model,Xtr,Ytr)
+    # Xtr, Ytr, Xv, Yv = ld.load_dataset(100, 100)
+    # Ye = validation(size,model,Xtr,Ytr)
 
     #v.loss_visualizer(model_path)
     #plt.show()

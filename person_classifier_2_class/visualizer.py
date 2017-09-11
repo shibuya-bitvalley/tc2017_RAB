@@ -65,12 +65,9 @@ def result_visualizer(input_img, estimated_label):
     input_img = cv2.cvtColor(input_img,cv2.COLOR_RGB2BGR)
 
     if estimated_label == 1:
-        cv2.putText(input_img, 'ORANGE', (5, height-20),
-                    fontType, 0.8, (0,165,255), 2, cv2.CV_AA)
-
-    elif estimated_label == 2:
-        cv2.putText(input_img, 'BLUE', (5, height-20),
-                    fontType, 0.8, (255,125,86), 2, cv2.CV_AA)
+        print 'TARGET'
+        cv2.putText(input_img, 'TARGET', (5, height-20),
+                    fontType, 0.8, (88,217,78), 2, cv2.CV_AA)
 
     cv2.imshow('image', input_img)
 

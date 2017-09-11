@@ -38,8 +38,8 @@ import network_structure as nn
 def myConverter(batch, device, padding=None):
 
     #size = 100
-    #size = 50
-    size = 32
+    size = 50
+    #size = 32
 
     newBatch = []
     del newBatch
@@ -71,7 +71,9 @@ if __name__ == '__main__':
 
     # Load CNN model
     #model = nn.CNN_classifier()
-    model = nn.CNN_classifier2()
+    #model = nn.CNN_classifier2()
+    model = nn.CNN_thibault()
+    #model = nn.CNN_classifier3()
 
     # Setup optimizer
     optimizer = chainer.optimizers.Adam()
@@ -82,7 +84,7 @@ if __name__ == '__main__':
 
     # parse args
     parser = argparse.ArgumentParser(description='CIFAR10 CLASSIFER')
-    parser.add_argument('--batchsize', '-b', type=int, default=200,
+    parser.add_argument('--batchsize', '-b', type=int, default=50,
                         help='Number of images in each mini batch')
     parser.add_argument('--epoch', '-e', type=int, default=10,
                         help='Number of sweeps over the dataset to train')

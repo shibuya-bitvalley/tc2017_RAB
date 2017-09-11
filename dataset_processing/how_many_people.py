@@ -24,8 +24,8 @@ if __name__ == '__main__':
     dir_1 = 1
     dir_2 = 24
 
-    d_range_1 = range(1,15)
-    d_range_2 = [17,20,21,22,23,24]
+    d_range_1 = range(1,5)
+    d_range_2 = [11,12,13,17,20,21,22,23,24]
     d_range_1.extend(d_range_2)
 
     #for d in range(dir_1,dir_2+1):
