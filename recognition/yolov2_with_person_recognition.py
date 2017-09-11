@@ -11,7 +11,7 @@ import chainer.functions as F
 #python scripts
 from yolov2 import *
 from CocoPredictor import *
-from person_classifier import *
+from PersonClassifier import *
 
 
 #preparing to save the video

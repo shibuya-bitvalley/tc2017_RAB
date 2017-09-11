@@ -17,7 +17,6 @@ from chainer import serializers
 #python script
 import network_structure as nn
 import load_dataset as ld
-import visualizer as v
 
 
 # load_person classifier
