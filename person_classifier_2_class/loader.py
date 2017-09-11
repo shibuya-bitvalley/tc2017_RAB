@@ -25,6 +25,7 @@ def validation(size,model,x,y):
 
     validation_label = []
     success_counter = 0
+    mistake_counter = 0
     end_flag = False
 
     for i in range(len(x)):
@@ -42,14 +43,18 @@ def validation(size,model,x,y):
 
         validation_label.append(label)
 
-        print str(i) + " actual: " + str(y[i]) \
+        print str(i+1) + " actual: " + str(y[i]) \
               + " estimated: " + str(label) \
               + " time:{0:.5f}".format(elapsed_time) + " [sec]"
 
+        # visualize result
         #end_flag = v.result_visualizer(input_img, label)
 
         if label == y[i]:
             success_counter += 1.0
+
+        if label == 1 and y[i] == 0:
+            mistake_counter += 1.0
 
         if end_flag == True:
             break
@@ -57,7 +62,11 @@ def validation(size,model,x,y):
     cv2.destroyAllWindows()
 
     success_rate = (success_counter/i)*100
-    print "validation accuracy: " + str(round(success_rate,2))
+    mistake_rate = (mistake_counter/i)*100
+
+    print "test accuracy: " + str(round(success_rate,2))
+    print "mistake rate: " + str(round(mistake_rate,2))
+
     return validation_label
 
 

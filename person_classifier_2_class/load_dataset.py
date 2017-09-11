@@ -98,8 +98,8 @@ def generate_random_array(images_array, labels_array):
 def load_dataset(train_N, validation_N):
 
     # 1. load txt file (image file names and labels)
-    #txt_path = 'data/'
-    txt_path = 'data1/'
+    txt_path = 'data/'
+    #txt_path = 'data1/'
     images_list, labels_list = load_data(txt_path,'train_validation_x.txt','train_validation_y.txt')
 
     images_array = np.array(images_list)
@@ -127,8 +127,8 @@ def load_dataset(train_N, validation_N):
 def load_test_dataset(test_N):
 
     # 1. load txt file (image file names and labels)
-    #txt_path = 'data/'
-    txt_path = 'data1/'
+    txt_path = 'data/'
+    #txt_path = 'data1/'
     images_list, labels_list = load_data(txt_path,'test_x.txt','test_y.txt')
 
     images_array = np.array(images_list)

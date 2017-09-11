@@ -70,23 +70,20 @@ def myConverter(batch, device, padding=None):
 if __name__ == '__main__':
 
     # Load CNN model
-    #model = nn.CNN_classifier()
-    #model = nn.CNN_classifier2()
     model = nn.CNN_thibault()
-    #model = nn.CNN_classifier3()
 
     # Setup optimizer
     optimizer = chainer.optimizers.Adam()
     optimizer.setup(model)
 
-    train_N = 80000
-    validation_N = 8000
+    train_N = 170000
+    validation_N = 17000
 
     # parse args
     parser = argparse.ArgumentParser(description='CIFAR10 CLASSIFER')
     parser.add_argument('--batchsize', '-b', type=int, default=50,
                         help='Number of images in each mini batch')
-    parser.add_argument('--epoch', '-e', type=int, default=10,
+    parser.add_argument('--epoch', '-e', type=int, default=5,
                         help='Number of sweeps over the dataset to train')
     parser.add_argument('--loaderjob', '-j', type=int,
                         help='Number of parallel data loading processes')
@@ -126,8 +123,8 @@ if __name__ == '__main__':
     trainer = training.Trainer(updater, (args.epoch, 'epoch'))
     trainer.extend(extensions.Evaluator(validation_iter, model, device=args.gpu, converter=myConverter))
     trainer.extend(extensions.LogReport())
-    trainer.extend(extensions.PrintReport(['epoch', 'main/loss', 'validation/main/loss','main/accuracy', 'validation/main/accuracy']))
-    #trainer.extend(extensions.PrintReport(['epoch', 'main/loss']))
+    trainer.extend(extensions.PrintReport(['epoch', 'main/accuracy', 'validation/main/accuracy']))
+    #trainer.extend(extensions.PrintReport(['epoch', 'main/loss', 'validation/main/loss','main/accuracy', 'validation/main/accuracy']))
     trainer.extend(extensions.ProgressBar())
     trainer.run()
 
