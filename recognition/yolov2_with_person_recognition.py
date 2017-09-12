@@ -64,18 +64,27 @@ if __name__ == "__main__":
         for result in nms_results:
             left, top = result["box"].int_left_top()
             right, bottom = result["box"].int_right_bottom()
-            rec_color = (255, 0, 255)
+            color = (255, 0, 255)
 
             if result["class_id"] == 0:
-                person_class = person_classifier(frame[top:bottom, left:right])
+                person_class, prob = person_classifier(frame[top:bottom, left:right])
 
                 if person_class == 1:
-                    rec_color = (0,255,0)
+                    color = (0,255,0)
+                    result_info = 'TARGET(%2d%%)' % (prob*100)
+                else:
+                    result_info = 'OTHERS(%2d%%)' % ((1.0-prob)*100)
 
-            cv2.rectangle(frame, (left, top), (right, bottom), rec_color, 3)
-            text = '%s(%2d%%)' % (result["label"], result["probs"].max()*result["conf"]*100)
-            cv2.putText(frame, text, (left, top-7), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-            print(text)
+                print(result_info)
+
+                cv2.putText(frame, result_info, (left, bottom+25),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+                cv2.rectangle(frame, (left, top), (right, bottom), color, 2)
+
+            #cv2.rectangle(frame, (left, top), (right, bottom), rec_color, 3)
+            #text = '%s(%2d%%)' % (result["label"], result["probs"].max()*result["conf"]*100)
+            #cv2.putText(frame, text, (left, top-7), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255), 2)
+            #print(text)
 
         cv2.imshow("video", frame)
 

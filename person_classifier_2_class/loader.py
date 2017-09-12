@@ -36,12 +36,23 @@ def validation(size,model,x,y):
 
         start = time.time()
         validation_output = model.forward(chainer.Variable(img))
+        validation_output = validation_output.data
         print
-        print validation_output.data
-        label =  np.argmax(validation_output.data)
+        #print validation_output
+        #print F.softmax(validation_output).data
+        prob = F.softmax(validation_output).data[0][1]
+        label =  np.argmax(validation_output)
         elapsed_time = time.time() - start
 
         validation_label.append(label)
+
+        if label == 1:
+            color = (0,255,0)
+            result_info = "TARGET({0:.2f}%)".format(prob*100)
+        else:
+            result_info = "OTHERS({0:.2f})".format((1.0-prob)*100)
+
+        print result_info
 
         print str(i+1) + " actual: " + str(y[i]) \
               + " estimated: " + str(label) \
@@ -55,6 +66,7 @@ def validation(size,model,x,y):
 
         if label == 1 and y[i] == 0:
             mistake_counter += 1.0
+            end_flag = v.result_visualizer(input_img, label)
 
         if end_flag == True:
             break
@@ -80,7 +92,12 @@ if __name__ == '__main__':
     # size = 50
     # model = nn.CNN_thibault()
 
-    model_path = 'thibault_model2/'
+    # model_path = 'thibault_model2/'
+    # model_name = 'cnn_gpu.model'
+    # size = 50
+    # model = nn.CNN_thibault()
+
+    model_path = 'thibault_model3/'
     model_name = 'cnn_gpu.model'
     size = 50
     model = nn.CNN_thibault()
