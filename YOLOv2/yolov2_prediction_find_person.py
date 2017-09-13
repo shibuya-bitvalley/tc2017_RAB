@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     cap.release()
 
-    save_label_list(person_label, save_path+'labels.txt')
+    #save_label_list(person_label, save_path+'labels.txt')
     print(frame_cnt)
     print(person_cnt)
     print(len(person_label))
