@@ -201,11 +201,11 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(righturg_to_odom src/righturg_to_odom.cpp)
-target_link_libraries(righturg_to_odom ${catkin_LIBRARIES})
+add_executable(rightlaser_to_lrf src/rightlaser_to_lrf.cpp)
+target_link_libraries(rightlaser_to_lrf ${catkin_LIBRARIES})
 
-add_executable(lefturg_to_odom src/lefturg_to_odom.cpp)
-target_link_libraries(lefturg_to_odom ${catkin_LIBRARIES})
+add_executable(leftlaser_to_lrf src/leftlaser_to_lrf.cpp)
+target_link_libraries(leftlaser_to_lrf ${catkin_LIBRARIES})
 
 add_executable(my_joystick src/my_joystick.cpp)
 target_link_libraries(my_joystick ${catkin_LIBRARIES})
