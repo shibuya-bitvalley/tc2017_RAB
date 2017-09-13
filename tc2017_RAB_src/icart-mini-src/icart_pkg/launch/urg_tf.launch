@@ -1,0 +1,33 @@
+<launch>
+  <!-- urg node -->
+  <node pkg="urg_node" type="urg_node" name="left_urg">
+    <param name="ip_address" value="192.168.0.13" />
+    <param name="frame_id" type="string" value="left_laser"/>
+    <remap from="first" to="first1" />
+    <remap from="last" to="last1" />
+  </node>
+  <node pkg="urg_node" type="urg_node" name="right_urg">
+    <param name="ip_address" value="192.168.0.18" />
+    <param name="frame_id" type="string" value="right_laser"/>
+    <remap from="first" to="first2" />
+    <remap from="last" to="last2" />
+  </node>
+  
+  <!-- lrf_merger -->
+  <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen">
+    <param name="destination_frame" value="lrf_link"/>
+    <param name="cloud_destination_topic" value="/lrf_cloud"/>
+    <param name="scan_destination_topic" value="/base_scan"/>
+    <param name="laserscan_topics" value ="/left_lrf/first1 right_lrf/first2"/>
+    <param name="angle_min" type="double" value="-3.14" />
+    <param name="angle_max" type="double" value="3.14" />
+    <param name="range_max" type="double" value="30.0" />
+    <param name="range_min" type="double" value="0.02" />
+  </node>
+  
+  <!-- tf -->
+  <node pkg="icart_pkg" type="leftlaser_to_lrf" name="leftlaser_to_lrf">
+  </node>
+  <node pkg="icart_pkg" type="rightlaser_to_lrf" name="rightlaser_to_lrf">
+  </node>
+</launch>

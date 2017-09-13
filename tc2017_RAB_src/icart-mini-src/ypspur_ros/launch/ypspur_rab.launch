@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="ypspur_ros" type="ypspur_ros" name="ypspur_ros" >
+    <param name="port" value="/dev/serial/by-id/usb-T-frog_project_T-frog_Driver-if00" />
+    <param name="param_file"
+value="/home/cartis/workspace/tc2017_RAB_ws/src/tc2017_RAB_src/icart-mini-src/param/red-air-buggy.prm" />
+  </node>
+</launch>
