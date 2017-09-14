@@ -1,4 +1,5 @@
 <launch>
+
   <!-- urg node -->
   <node pkg="urg_node" type="urg_node" name="left_urg">
     <param name="ip_address" value="192.168.0.13" />
@@ -18,7 +19,7 @@
     <param name="destination_frame" value="lrf_link"/>
     <param name="cloud_destination_topic" value="/lrf_cloud"/>
     <param name="scan_destination_topic" value="/base_scan"/>
-    <param name="laserscan_topics" value ="/left_lrf/first1 right_lrf/first2"/>
+    <param name="laserscan_topics" value ="/left_lrf/first1 /right_lrf/first2"/>
     <param name="angle_min" type="double" value="-3.14" />
     <param name="angle_max" type="double" value="3.14" />
     <param name="range_max" type="double" value="30.0" />
