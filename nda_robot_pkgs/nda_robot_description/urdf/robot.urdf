@@ -147,7 +147,7 @@
   <joint name="base_link_to_left_lrf_link" type="fixed">
     <parent link="base_link"/>
     <child link="left_lrf_link"/>
-    <origin xyz="-0.25 0.2305 -0.35" rpy="0 0 1.57"/>
+    <origin xyz="-0.25 0.2305 -0.3641" rpy="0 0 1.57"/>
   </joint>
   <gazebo reference="left_lrf_link">
     <sensor type="ray" name="left_lrf_sensor">
@@ -185,7 +185,7 @@
   <joint name="base_link_to_right_lrf_link" type="fixed">
     <parent link="base_link"/>
     <child link="right_lrf_link"/>
-    <origin xyz="-0.25 -0.2305 -0.35" rpy="0 0 -1.57"/>
+    <origin xyz="-0.25 -0.2305 -0.3641" rpy="0 0 -1.57"/>
   </joint>
   <gazebo reference="right_lrf_link">
     <sensor type="ray" name="right_lrf_sensor">
