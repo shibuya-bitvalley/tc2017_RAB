@@ -22,10 +22,11 @@ if __name__ == '__main__':
     total_others = 0
 
     dir_1 = 1
-    dir_2 = 24
+    dir_2 = 49
 
-    d_range_1 = range(1,5)
-    d_range_2 = [11,12,13,17,20,21,22,23,24]
+    d_range_1 = range(1,10+1)
+    d_range_2 = range(24,55+1)
+    #d_range_2 = [11,12,13,17,20,21,22,23,24]
     d_range_1.extend(d_range_2)
 
     #for d in range(dir_1,dir_2+1):

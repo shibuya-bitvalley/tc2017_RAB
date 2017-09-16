@@ -33,7 +33,7 @@ def show_dataset(images, labels):
 
     end_flag = False
     fontType = cv2.FONT_HERSHEY_SIMPLEX
-    size = 32
+    size = 100
 
     for i in range(len(images)):
 
@@ -98,8 +98,9 @@ def generate_random_array(images_array, labels_array):
 def load_dataset(train_N, validation_N):
 
     # 1. load txt file (image file names and labels)
-    txt_path = 'data/'
+    #txt_path = 'data/'
     #txt_path = 'data1/'
+    txt_path = 'data2/'
     images_list, labels_list = load_data(txt_path,'train_validation_x.txt','train_validation_y.txt')
 
     images_array = np.array(images_list)
@@ -127,8 +128,9 @@ def load_dataset(train_N, validation_N):
 def load_test_dataset(test_N):
 
     # 1. load txt file (image file names and labels)
-    txt_path = 'data/'
+    #txt_path = 'data/'
     #txt_path = 'data1/'
+    txt_path = 'data2/'
     images_list, labels_list = load_data(txt_path,'test_x.txt','test_y.txt')
 
     images_array = np.array(images_list)
@@ -178,5 +180,5 @@ if __name__ == '__main__':
     print Xts.shape
     print Yts.shape
 
-    #show_dataset(Xtr, Ytr)
-    show_dataset(Xts, Yts)
+    show_dataset(Xtr, Ytr)
+    #show_dataset(Xts, Yts)

@@ -76,8 +76,8 @@ if __name__ == '__main__':
     optimizer = chainer.optimizers.Adam()
     optimizer.setup(model)
 
-    train_N = 170000
-    validation_N = 17000
+    train_N = 350000
+    validation_N = 30000
 
     # parse args
     parser = argparse.ArgumentParser(description='CIFAR10 CLASSIFER')

@@ -25,9 +25,9 @@ if __name__ == '__main__':
     # test_N = 19000
     # txt_path = 'data/'
 
-    train_validation_N = 100000
-    test_N = 20000
-    txt_path = 'data1/'
+    train_validation_N = 380000
+    test_N = 40000
+    txt_path = 'data2/'
 
     all_images_file = open(txt_path+'images.txt','r')
     all_labels_file = open(txt_path+'labels.txt','r')
