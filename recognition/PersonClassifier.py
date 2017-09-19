@@ -24,9 +24,9 @@ import load_dataset as ld
 class PersonClassifier:
     def __init__(self):
 
-        model_path = 'thibault_model3/'
+        model_path = 'thibault_model5/'
         model_name = 'cnn_gpu.model'
-        model = nn.CNN_thibault()
+        model = nn.CNN_thibault2()
         self.size = 50
 
         print ("loading classifier model...")

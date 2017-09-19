@@ -58,7 +58,7 @@ def validation(size,model,x,y):
               + " estimated: " + str(label) \
               + " time:{0:.5f}".format(elapsed_time) + " [sec]"
 
-        # visualize result
+        #visualize result
         #end_flag = v.result_visualizer(input_img, label)
 
         if label == y[i]:
@@ -97,10 +97,20 @@ if __name__ == '__main__':
     # size = 50
     # model = nn.CNN_thibault()
 
-    model_path = 'thibault_model3/'
+    # model_path = 'thibault_model3/'
+    # model_name = 'cnn_gpu.model'
+    # size = 50
+    # model = nn.CNN_thibault()
+
+    model_path = 'thibault_model5/'
     model_name = 'cnn_gpu.model'
     size = 50
-    model = nn.CNN_thibault()
+    model = nn.CNN_thibault2()
+
+    # model_path = 'thibault_model6/'
+    # model_name = 'cnn_gpu.model'
+    # size = 50
+    # model = nn.CNN_thibault()
 
     serializers.load_npz(model_path+model_name, model)
     optimizer = chainer.optimizers.Adam()
@@ -108,9 +118,6 @@ if __name__ == '__main__':
 
     Xts, Yts = ld.load_test_dataset(test_N)
     Ye = validation(size,model,Xts,Yts)
-
-    # Xtr, Ytr, Xv, Yv = ld.load_dataset(10, 100)
-    # Ye = validation(size,model,Xv,Yv)
 
     #v.loss_visualizer(model_path)
     plt.show()
