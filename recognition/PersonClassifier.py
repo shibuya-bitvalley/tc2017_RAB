@@ -39,7 +39,6 @@ class PersonClassifier:
 
         self.model = model
 
-
     def __call__(self, img):
 
         img = cv2.resize(img, (self.size,self.size), interpolation = cv2.INTER_LINEAR)
