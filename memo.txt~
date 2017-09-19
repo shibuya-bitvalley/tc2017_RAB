@@ -5,6 +5,3 @@ lrf_mergeができていない問題
 　→ 親トピックとは？
 　→ rostopic listで確認できないか？
 　→ トピックを変更できればfirst,last,intenseは変更しなくても良くなるかも？
-
-urg_node単体で起動して出力されているtopicを確認
-/firstを/right/firstにできれば幸せでは？
