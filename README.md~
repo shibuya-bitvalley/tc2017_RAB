@@ -4,7 +4,7 @@ icartベースのベビーカーとイーサーネット版のTop-URGを2つ使�
 ## 起動手順
 1. ypspurの起動
 ```bash
-$ sh nishidalab_ypspur_start.sh
+$ sudo sh nishidalab_ypspur_start.sh
 $ roslaunch nishidalab_ypspur_driver nishidalab_ypspur_driver.launch
 ```
 
