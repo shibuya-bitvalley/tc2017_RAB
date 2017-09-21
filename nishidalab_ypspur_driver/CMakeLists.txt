@@ -1,19 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(icart_pkg)
-
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+project(nishidalab_ypspur_driver)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  sensor_msgs
+  geometry_msgs
+  nav_msgs
   roscpp
-  rospy
-  std_msgs
   tf
-  ypspur_ros
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -34,10 +30,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## * Let MSG_DEP_SET be the set of packages whose message types you use in
 ##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).
 ## * In the file package.xml:
-##   * add a build_depend tag for "message_generation"
 ##   * add a build_depend and a run_depend tag for each package in MSG_DEP_SET
-##   * If MSG_DEP_SET isn't empty the following dependency has been pulled in
-##     but can be declared for certainty nonetheless:
+##   * If MSG_DEP_SET isn't empty the following dependencies might have been
+##     pulled in transitively but can be declared for certainty nonetheless:
+##     * add a build_depend tag for "message_generation"
 ##     * add a run_depend tag for "message_runtime"
 ## * In this file (CMakeLists.txt):
 ##   * add "message_generation" and every package in MSG_DEP_SET to
@@ -73,27 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs
-# )
-
-################################################
-## Declare ROS dynamic reconfigure parameters ##
-################################################
-
-## To declare and build dynamic reconfigure parameters within this
-## package, follow these steps:
-## * In the file package.xml:
-##   * add a build_depend and a run_depend tag for "dynamic_reconfigure"
-## * In this file (CMakeLists.txt):
-##   * add "dynamic_reconfigure" to
-##     find_package(catkin REQUIRED COMPONENTS ...)
-##   * uncomment the "generate_dynamic_reconfigure_options" section below
-##     and list every .cfg file to be processed
-
-## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
+#   geometry_msgs#   nav_msgs
 # )
 
 ###################################
@@ -107,8 +83,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES icart_pkg
-#  CATKIN_DEPENDS roscpp rospy std_msgs tf ypspur_ros
+#  LIBRARIES nishidalab_ypspur_driver
+ CATKIN_DEPENDS geometry_msgs nav_msgs roscpp tf
 #  DEPENDS system_lib
 )
 
@@ -118,40 +94,50 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
+# include_directories(include)
 include_directories(
-# include
+  include
+   /usr/local/include
   ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/icart_pkg.cpp
+link_directories(
+  /usr/local/lib
+)
+
+## Declare a cpp library
+# add_library(nishidalab_ypspur_driver
+#   src/${PROJECT_NAME}/nishidalab_ypspur_driver.cpp  
 # )
 
-## Add cmake target dependencies of the library
-## as an example, code may need to be generated before libraries
-## either from message generation or dynamic reconfigure
-# add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+## Declare a cpp executable
+add_executable(nishidalab_ypspur_driver_node src/nishidalab_ypspur_driver_node.cpp)
+add_executable(nishidalab_ypspur_odom_publisher_node src/nishidalab_ypspur_odom_publisher_node.cpp)
 
-## Declare a C++ executable
-## With catkin_make all packages are built within a single CMake context
-## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/icart_pkg_node.cpp)
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(
+  nishidalab_ypspur_driver_node 
+  nishidalab_ypspur_driver_generate_messages_cpp
+)
+add_dependencies(
+  nishidalab_ypspur_odom_publisher_node 
+  nishidalab_odom_publisher_node_generate_messages_cpp
+)
 
-## Rename C++ executable without prefix
-## The above recommended prefix causes long target names, the following renames the
-## target back to the shorter version for ease of user use
-## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
-# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
-
-## Add cmake target dependencies of the executable
-## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(
+  nishidalab_ypspur_driver_node
+  ${catkin_LIBRARIES}
+  ypspur
+)
+target_link_libraries(
+  nishidalab_ypspur_odom_publisher_node
+  ypspur
+  ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##
@@ -168,7 +154,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
+# install(TARGETS nishidalab_ypspur_driver nishidalab_ypspur_driver_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -193,13 +179,10 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_icart_pkg.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_nishidalab_ypspur_driver.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(my_joystick src/my_joystick.cpp)
-target_link_libraries(my_joystick ${catkin_LIBRARIES})
