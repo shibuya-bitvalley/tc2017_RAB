@@ -119,5 +119,5 @@ if __name__ == '__main__':
     Xts, Yts = ld.load_test_dataset(test_N)
     Ye = validation(size,model,Xts,Yts)
 
-    #v.loss_visualizer(model_path)
+    v.loss_visualizer(model_path)
     plt.show()
