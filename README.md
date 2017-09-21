@@ -2,12 +2,13 @@
 icartベースのベビーカーとイーサーネット版のTop-URGを2つ使用しています。
 
 ## 起動手順
-1. ypspur_rosの起動
+1. ypspurの起動
 ```bash
-$ roslaunch ypspur_ros ypspur_rab.launch
+$ sudo sh nishidalab_ypspur_start.sh
+$ roslaunch nishidalab_ypspur_driver nishidalab_ypspur_driver.launch
 ```
 
-2. urg_nodeとlrf_merger(未完成)の起動
+2. urg_nodeとlrf_mergerの起動
 ```bash
 $ roslaunch icart_pkg urg_merger.launch
 ```

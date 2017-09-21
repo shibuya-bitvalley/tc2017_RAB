@@ -25,7 +25,8 @@ TeleopIcart::TeleopIcart(): vel_linear(1), vel_angular(3){
    // 購読するトピックの定義
    joy_sub_ = nh.subscribe<sensor_msgs::Joy>("joy", 10, &TeleopIcart::joyCallback, this);
    // 配布するトピックの定義
-   vel_pub_ = nh.advertise<geometry_msgs::Twist>("ypspur_ros/cmd_vel", 1);
+   vel_pub_ = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 1); 
+   //ypspur_ros使用時は/ypspur_ros/cmd_vel Nishidalab_driver使用時は/cmd_velのみ
 }
 
 // 購読用コールバック関数
