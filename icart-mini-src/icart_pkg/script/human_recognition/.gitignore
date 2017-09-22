@@ -1,0 +1,14 @@
+videos/
+images/
+__pycache__/
+data*/
+results/
+result/
+*model*/
+*result.jpg
+*.avi
+*.model
+*.mov
+*.weights
+*.pyc
+*~
