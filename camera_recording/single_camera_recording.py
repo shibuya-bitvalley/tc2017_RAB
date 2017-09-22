@@ -22,10 +22,10 @@ def capture(camera_ID, video_number):
 
     width = 320
     height = 240
-    brightness = 0.498039215803
-    contrast = 0.6
-    saturation = 0.3
-    codec = 0x47504A4D
+    # brightness = 0.498039215803
+    # contrast = 0.6
+    # saturation = 0.3
+    # codec = 0x47504A4D
     fps = 30
 
     cap = cv2.VideoCapture(camera_ID)
@@ -40,9 +40,9 @@ def capture(camera_ID, video_number):
 
     cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, width)
     cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, height)
-    cap.set(cv2.cv.CV_CAP_PROP_BRIGHTNESS, brightness)
-    cap.set(cv2.cv.CV_CAP_PROP_CONTRAST, contrast)
-    cap.set(cv2.cv.CV_CAP_PROP_SATURATION, saturation)
+    # cap.set(cv2.cv.CV_CAP_PROP_BRIGHTNESS, brightness)
+    # cap.set(cv2.cv.CV_CAP_PROP_CONTRAST, contrast)
+    # cap.set(cv2.cv.CV_CAP_PROP_SATURATION, saturation)
     #cap.set(cv2.cv.CV_CAP_PROP_FOURCC('M','J','P','E','G'))
     cap.set(cv2.cv.CV_CAP_PROP_FPS, fps)
 
