@@ -10,8 +10,9 @@ import cv2
 # preparing to save the video
 def initWriter(camera_ID, w, h, fps, save_path):
     #fourcc = cv2.cv.CV_FOURCC('D','I','B',' ')
-    fourcc = cv2.cv.CV_FOURCC('D','I','V','X')
+    #fourcc = cv2.cv.CV_FOURCC('D','I','V','X')
     #fourcc = cv2.cv.CV_FOURCC('F','L','V','1')
+    fourcc = cv2.cv.CV_FOURCC(*'XVID')
     rec = cv2.VideoWriter(save_path+'camera_'+str(camera_ID)+'.avi', \
                           fourcc, fps, (w, h))
     return rec
