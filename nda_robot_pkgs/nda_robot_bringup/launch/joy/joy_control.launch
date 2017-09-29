@@ -1,7 +1,7 @@
 <launch>
    <!-- arguments -->
   <arg name="joy_dev" default="/dev/input/js0" />
-  <arg name="joy_config" default="$(find nda_robot_bringup)/config/joy/ps3.yaml" />
+  <arg name="joy_config" default="$(find nda_robot_bringup)/config/joy/sanwa.yaml" />
   <arg name="robot_config" default="$(find nda_robot_bringup)/config/joy/nda_robot.yaml" />
 
   <!-- joy_node -->

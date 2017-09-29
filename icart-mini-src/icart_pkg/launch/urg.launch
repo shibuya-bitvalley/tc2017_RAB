@@ -1,0 +1,27 @@
+<launch>
+  <arg name="model" default="$(find nda_robot_description)/urdf/robot.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <arg name="robot_config" default="$(find nda_robot_bringup)/config/joy/nda_robot.yaml" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- urg node -->
+    <node pkg="urg_node" type="urg_node" name="left_urg" output="screen">
+      <param name="ip_address" value="192.168.0.13" />
+      <param name="frame_id" type="string" value="left_lrf_link"/>
+      <remap from="first" to="/left/first" />
+      <remap from="last" to="/left/last" />
+      <remap from="most_intense" to="/left/most_intense" />
+    </node>
+    <node pkg="urg_node" type="urg_node" name="right_urg" output="screen">
+      <param name="ip_address" value="192.168.0.18" />
+      <param name="frame_id" type="string" value="right_lrf_link"/>
+      <remap from="first" to="/right/first" />
+      <remap from="last" to="/right/last" />
+      <remap from="most_intense" to="/right/most_intense" />
+   </node>
+   
+   <!-- rviz -->
+   <node name="rviz" pkg="rviz" type="rviz" />
+</launch>
+   
