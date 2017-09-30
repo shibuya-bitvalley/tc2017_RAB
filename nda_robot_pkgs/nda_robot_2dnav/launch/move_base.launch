@@ -2,7 +2,7 @@
   <master auto="start"/>
   <!-- MAP SERVER -->
   <!-- gazebo sim  -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/0929.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/0929_modified.yaml" />
 
   <!-- AMCL -->
   <include file="$(find nda_robot_2dnav)/launch/amcl/amcl.launch"/>
@@ -29,6 +29,8 @@
     <param name="oscillation_timeout" value="10.0" />
     <param name="clearing_rotation_allowed" value="true" />
 	<!-- remap cmd_vel topic for gazebo -->
+    <!-- <remap from="cmd_vel" to="/deiff_drive_controller/cmd_vel"/> -->
+    	<!-- remap cmd_vel topic for RAB -->
     <remap from="cmd_vel" to="/ypspur_ros/cmd_vel"/>
   </node>
 </launch>
