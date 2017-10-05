@@ -22,8 +22,8 @@
         <remap from="first" to="/right/first" />
 	<remap from="last" to="/right/last" />
 	<remap from="most_intense" to="/right/most_intense" />
-	<param name="angle_max" value="double" value="1.57079632679" />
-	<param name="angle_min" value="double" value="-2.35619449019" />
+	<param name="angle_max" type="double" value="1.57079632679" />
+	<param name="angle_min" type="double" value="-2.35619449019" />
    </node>
 	      
    <!-- lrf_merger -->
@@ -39,5 +39,5 @@
    </node>
   
    <!-- rviz -->
-   <node name="rviz" pkg="rviz" type="rviz" />
+   <!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
 </launch>

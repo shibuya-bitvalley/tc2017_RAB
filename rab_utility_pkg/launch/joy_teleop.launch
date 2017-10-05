@@ -12,6 +12,6 @@
   <param name="axis_linear" value="1" type="int" />
   <param name="scale_angular" value="1.0" type="double" />
   <param name="scale_linear" value="1.5" type="double"/>
-  <node pkg="icart_pkg" type="my_joystick" name="joystick" output="screen" required="true" >
+  <node pkg="rab_utility_pkg" type="my_joystick" name="joystick" output="screen" required="true" >
   </node>
 </launch>

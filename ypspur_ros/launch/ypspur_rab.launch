@@ -1,7 +1,7 @@
 <launch>
   <node pkg="ypspur_ros" type="ypspur_ros" name="ypspur_ros" >
     <param name="port" value="/dev/serial/by-id/usb-T-frog_project_T-frog_Driver-if00" />
-    <param name="param_file" value="$(find rab_utility_pkg)/ypspur_ros/param/red-air-buggy.prm" />
+    <param name="param_file" value="$(find rab_utility_pkg)/param/red-air-buggy.prm" />
     <param name="base_link_id" value="/base_footprint" />
   </node>
 </launch>
