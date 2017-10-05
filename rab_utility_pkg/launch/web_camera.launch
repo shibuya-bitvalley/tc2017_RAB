@@ -1,0 +1,20 @@
+<launch>
+  <!-- usb_cam -->
+  <node pkg="usb_cam" type="usb_cam_node" name="usb_cam" output="screen">
+    <!-- <param name="video_device" value="/dev/video0" /> -->
+    <param name="pixel_format" value="yuyv" />
+    <param name="framerate" value="60" />
+  </node>
+  
+  <!-- image_view -->
+  <node pkg="image_view" type="image_view" name="image_view" >
+    <remap from="/image" to="/usb_cam/image_raw" />
+  </node>
+  
+  <!-- video_record -->
+  <node pkg="image_view" type="video_recorder" name="video_recorder" >
+    <remap from="/image" to="/usb_cam/image_raw" />
+    <param name="fps" value="60" />
+    <param name="filename" value="/home/cartis/Videos/output.avi" />
+  </node>
+</launch>
