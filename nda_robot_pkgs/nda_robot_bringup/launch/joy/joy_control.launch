@@ -1,5 +1,5 @@
 <launch>
-   <!-- arguments -->
+  <!-- arguments -->
   <arg name="joy_dev" default="/dev/input/js0" />
   <arg name="joy_config" default="$(find nda_robot_bringup)/config/joy/sanwa.yaml" />
   <arg name="robot_config" default="$(find nda_robot_bringup)/config/joy/nda_robot.yaml" />
@@ -17,5 +17,5 @@
     <rosparam command="load" ns="robot_conf/" file="$(arg robot_config)" />
     <param name="cmdvel_topic_name" value="diff_drive_controller/cmd_vel" />
     <param name="joy_topic_name" value="joy" />
-</node>
+  </node>
 </launch>
