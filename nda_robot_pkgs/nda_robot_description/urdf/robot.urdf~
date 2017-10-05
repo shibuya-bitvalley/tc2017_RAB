@@ -29,8 +29,8 @@
 <!--
   <gazebo reference="housing_link">
     <selfCollide>false</selfCollide>
-    <mu1 value="0"/>
-    <mu2 value="0"/>
+    <mu1 value="0" />
+    <mu2 value="0" />
   </gazebo>
   -->
   <joint name="base_link_to_housing_link" type="fixed">
