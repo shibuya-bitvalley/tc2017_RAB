@@ -13,7 +13,7 @@
 	<remap from="first" to="/left/first" />
 	<remap from="last" to="/left/last" />
 	<remap from="most_intense" to="/left/most_intense" />
-	<param name="angle_min" type="double" value="-1.57079632679" />
+	<param name="angle_min" type="double" value="-1.69296937443" />
 	<param name="angle_max" type="double" value="2.35619449019" />
     </node>
         <node pkg="urg_node" type="urg_node" name="right_urg" output="screen">
@@ -22,7 +22,7 @@
         <remap from="first" to="/right/first" />
 	<remap from="last" to="/right/last" />
 	<remap from="most_intense" to="/right/most_intense" />
-	<param name="angle_max" type="double" value="1.57079632679" />
+	<param name="angle_max" type="double" value="1.69296937443" />
 	<param name="angle_min" type="double" value="-2.35619449019" />
    </node>
 	      
