@@ -8,6 +8,8 @@ project(rab_utility_pkg)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  move_base_msgs
   sensor_msgs
   roscpp
   rospy
@@ -203,3 +205,6 @@ include_directories(
 
 add_executable(my_joystick src/my_joystick.cpp)
 target_link_libraries(my_joystick ${catkin_LIBRARIES})
+
+add_executable(waypoint src/waypoint.cpp)
+target_link_libraries(waypoint ${catkin_LIBRARIES})
