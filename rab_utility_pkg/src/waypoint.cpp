@@ -12,6 +12,9 @@ struct MyPose{
 };
 
 int main(int argc, char** argv){
+   // 起動後に5秒間スリープ
+   ROS_INFO("waypoint launched! Wait 5 secs.");
+   ros::Duration(5.0);
    MyPose way_point[] = {
       { 19.1, 1.49, 0.0 * M_PI},
       { 32.4, 2.31, -0.5 * M_PI},
