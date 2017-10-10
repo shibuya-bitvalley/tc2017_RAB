@@ -33,6 +33,6 @@
   </node>
   
   <!-- rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" args="$(find rab_utility_pkg)/config/nav.rviz" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rab_utility_pkg)/config/nav.rviz" required="true" />
 </launch>
 

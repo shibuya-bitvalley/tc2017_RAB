@@ -39,5 +39,6 @@
    </node>
   
    <!-- rviz -->
-   <!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
+   <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find
+rab_utility_pkg)/config/merge.rviz" rewuired="true" /> -->
 </launch>
