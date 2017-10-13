@@ -16,7 +16,7 @@ call(['rosrun','rab_utility_pkg','1st_search_waypoint'])
 call(['rosrun','rab_utility_pkg','search2lotteria_waypoint'])
 
 #mapを切り替えてmove_base再起動
-#p=Popen(['roslaunch','nda_robot_2dnav move_base_lotteria2goal.launch'])
+p=Popen(['roslaunch','nda_robot_2dnav move_base_lotteria2goal.launch'])
 
 #ロッテリアから探索エリアまでのwaypoint起動
 #call(['rosrun','rab_utility_pkg','lotteria2search_waypoint'])
