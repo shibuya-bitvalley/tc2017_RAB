@@ -11,7 +11,7 @@
   <param name="gui_publish_rate" value="10.0"/>
   <param name="laser_max_beams" value="60"/>
   <param name="min_particles" value="100"/>
-  <param name="max_particles" value="5000"/>
+  <param name="max_particles" value="300"/>  <!-- 元々は5000 -->
   <param name="kld_err" value="0.01"/>
   <param name="kld_z" value="0.99"/>
   <param name="odom_alpha1" value="0.2"/>
@@ -42,8 +42,8 @@
   <!-- <param name="initial_pose_x" value="-2.964" /> -->
   <!-- <param name="initial_pose_y" value="57.112" /> -->
   <!-- <param name="initial_pose_a" value="1.507" /> -->
-  <param name="initial_pose_x" value="41.655" />
-  <param name="initial_pose_y" value="-35.610" />
+  <param name="initial_pose_x" value="42.965" />
+  <param name="initial_pose_y" value="-40.159" />
   <param name="initial_pose_a" value="1.590" />
 </node>
 </launch>

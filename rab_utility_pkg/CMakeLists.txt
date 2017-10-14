@@ -209,14 +209,35 @@ target_link_libraries(my_joystick ${catkin_LIBRARIES})
 add_executable(4th_waypoint src/4th_waypoint.cpp)
 target_link_libraries(4th_waypoint ${catkin_LIBRARIES})
 
-add_executable(park_waypoint src/park_waypoint.cpp)
-target_link_libraries(park_waypoint ${catkin_LIBRARIES})
+add_executable(park_wp src/park_wp.cpp)
+target_link_libraries(park_wp ${catkin_LIBRARIES})
 
-add_executable(park2search_waypoint src/park2search_waypoint.cpp)
-target_link_libraries(park2search_waypoint ${catkin_LIBRARIES})
+add_executable(park2search_wp src/park2search_wp.cpp)
+target_link_libraries(park2search_wp ${catkin_LIBRARIES})
 
-add_executable(1st_search_waypoint src/1st_search_waypoint.cpp)
-target_link_libraries(1st_search_waypoint ${catkin_LIBRARIES})
+add_executable(1st_search_wp src/1st_search_wp.cpp)
+target_link_libraries(1st_search_wp ${catkin_LIBRARIES})
 
-add_executable(search2lotteria_waypoint src/search2lotteria_waypoint.cpp)
-target_link_libraries(search2lotteria_waypoint ${catkin_LIBRARIES})
+add_executable(search2lotteria_wp src/search2lotteria_wp.cpp)
+target_link_libraries(search2lotteria_wp ${catkin_LIBRARIES})
+
+add_executable(lotteria2search_wp src/lotteria2search_wp.cpp)
+target_link_libraries(lotteria2search_wp ${catkin_LIBRARIES})
+
+add_executable(2nd_search_wp src/2nd_search_wp.cpp)
+target_link_libraries(2nd_search_wp ${catkin_LIBRARIES})
+
+add_executable(search2pedestrian_signal_wp src/search2pedestrian_signal_wp.cpp)
+target_link_libraries(search2pedestrian_signal_wp ${catkin_LIBRARIES})
+
+add_executable(turnaround_point_wp src/turnaround_point_wp.cpp)
+target_link_libraries(turnaround_point_wp ${catkin_LIBRARIES})
+
+add_executable(pedestrian_signal2goal_wp src/pedestrian_signal2goal_wp.cpp)
+target_link_libraries(pedestrian_signal2goal_wp ${catkin_LIBRARIES})
+
+add_executable(map_loader src/map_loader.cpp)
+target_link_libraries(map_loader ${catkin_LIBRARIES})
+
+add_executable(path_loader src/path_loader.cpp)
+target_link_libraries(path_loader ${catkin_LIBRARIES})
