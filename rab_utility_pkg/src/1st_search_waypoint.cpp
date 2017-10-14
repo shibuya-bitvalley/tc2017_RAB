@@ -13,8 +13,8 @@ struct MyPose{
 
 int main(int argc, char** argv){
    // 起動後に5秒間スリープ
-   ROS_INFO("waypoint launched! Wait 5 secs.");
-   sleep(5);
+   //ROS_INFO("waypoint launched! Wait 5 secs.");
+   //sleep(5);
    MyPose way_point[] = {
       {-97.4639663696,215.012161255 ,0.7476049707 },
       {-91.4315185547,220.605041504 ,-0.0016817092},

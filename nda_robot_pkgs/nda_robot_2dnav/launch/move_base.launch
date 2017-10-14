@@ -2,10 +2,10 @@
   <master auto="start"/>
   <!-- MAP SERVER -->
   <!-- gazebo sim  -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/tc17/lotteria2goal_modified.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/0929.yaml" />
 
   <!-- AMCL -->
-  <include file="$(find nda_robot_2dnav)/launch/amcl/amcl_lotteria2goal.launch"/>
+  <include file="$(find nda_robot_2dnav)/launch/amcl/amcl.launch"/>
 
   <!-- MOVE BASE -->
   <!-- remap the odom topic for local planner -->

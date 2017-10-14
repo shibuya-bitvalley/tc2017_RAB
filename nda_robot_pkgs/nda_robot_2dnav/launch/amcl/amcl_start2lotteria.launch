@@ -42,8 +42,8 @@
   <!-- <param name="initial_pose_x" value="-2.964" /> -->
   <!-- <param name="initial_pose_y" value="57.112" /> -->
   <!-- <param name="initial_pose_a" value="1.507" /> -->
-  <param name="initial_pose_x" value="13.819" />
-  <param name="initial_pose_y" value="23.381" />
-  <param name="initial_pose_a" value="79.894" />
+  <param name="initial_pose_x" value="14.056" />
+  <param name="initial_pose_y" value="25.909" />
+  <param name="initial_pose_a" value="1.544" />
 </node>
 </launch>
