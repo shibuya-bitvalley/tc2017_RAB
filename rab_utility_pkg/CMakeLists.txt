@@ -206,8 +206,25 @@ include_directories(
 add_executable(my_joystick src/my_joystick.cpp)
 target_link_libraries(my_joystick ${catkin_LIBRARIES})
 
+<<<<<<< HEAD
 add_executable(4th_waypoint src/4th_waypoint.cpp)
 target_link_libraries(4th_waypoint ${catkin_LIBRARIES})
 
 add_executable(park_waypoint src/park_waypoint.cpp)
 target_link_libraries(park_waypoint ${catkin_LIBRARIES})
+=======
+add_executable(waypoint src/waypoint.cpp)
+target_link_libraries(waypoint ${catkin_LIBRARIES})
+
+add_executable(park_waypoint src/park_waypoint.cpp)
+target_link_libraries(park_waypoint ${catkin_LIBRARIES})
+
+add_executable(park2search_waypoint src/park2search_waypoint.cpp)
+target_link_libraries(park2search_waypoint ${catkin_LIBRARIES})
+
+add_executable(1st_search_waypoint src/1st_search_waypoint.cpp)
+target_link_libraries(1st_search_waypoint ${catkin_LIBRARIES})
+
+add_executable(search2lotteria_waypoint src/search2lotteria_waypoint.cpp)
+target_link_libraries(search2lotteria_waypoint ${catkin_LIBRARIES})
+>>>>>>> ba4035192dc632a3f9c513bf35800348d6e5f60a

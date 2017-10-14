@@ -1,4 +1,4 @@
-image: tc17/start2lotteria.pgm
+image: start2lotteria.pgm
 resolution: 0.050000
 origin: [-319.200000, -100.000000, 0.000000]
 negate: 0
