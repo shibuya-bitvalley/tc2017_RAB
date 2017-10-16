@@ -1,10 +1,30 @@
 # tc2017_RAB_src
 icartベースのベビーカーとイーサーネット版のTop-URGを2つ使用しています。
 
+##インストール方法
+1. workspaceの作成、git clone
+```
+$ mkdir -p {your_workspace_name}/src
+$ cd {your_workspace_name}/src
+$ catkin_init_workspace
+$ git clone https://github.com/shibuya-bitvalley/tc2017_RAB.git
+```
+
+2. 九工大西田研究室作成のnda_robot_pkgsのインストール(田中さん作成)
+
+src/nda_robot_pkgのREADMEを参照してください。
+
 ## 起動手順
 1. ypspurの起動
 ```bash
-$ roslaunch ypspur_ros ypspur_rab.launch
+$ roscd nishidalab_ypspur_driver/config/
+$ sh nishidalab_ypspur_starter.sh 
+```
+別ターミナルで
+
+```bash
+$ roslaunch nishidalab_ypspur_driver nishidalab_ypspur.launch 
+
 ```
 
 2. urg_nodeとlrf_mergerの起動
