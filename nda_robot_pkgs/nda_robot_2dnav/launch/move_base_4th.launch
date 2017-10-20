@@ -9,7 +9,6 @@
 
   <!-- MOVE BASE -->
   <!-- remap the odom topic for local planner -->
-  <node pkg="topic_tools" type="relay" name="relay_odom" args="/odom odom"/>
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
   <!-- COST MAP -->
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/costmap_common.yaml" command="load" ns="global_costmap" />
@@ -29,10 +28,9 @@
     <param name="oscillation_timeout" value="10.0" />
     <param name="clearing_rotation_allowed" value="true" />
   <!-- remap cmd_vel topic for RAB -->
-    <remap from="cmd_vel" to="/cmd_vel"/>
+    <!-- <remap from="cmd_vel" to="/cmd_vel"/> -->
   </node>
   
   <!-- rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rab_utility_pkg)/config/nav.rviz" required="true" />
 </launch>
-
