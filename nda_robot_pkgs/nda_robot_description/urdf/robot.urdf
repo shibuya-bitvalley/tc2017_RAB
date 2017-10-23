@@ -12,12 +12,12 @@
   <link name="housing_link">
     <visual>
       <geometry>
-        <box size="1.0 0.4 1.0"/>
+        <box size="0.9 0.4 1.0"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <box size="1.0 0.4 1.0"/>
+        <box size="0.9 0.4 1.0"/>
       </geometry>
     </collision>
     <inertial>
