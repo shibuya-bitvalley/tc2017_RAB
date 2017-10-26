@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
       Splitter Ratio: 0.5
-    Tree Height: 775
+    Tree Height: 895
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -68,6 +69,400 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
+        0:
+          Value: true
+        1:
+          Value: true
+        10:
+          Value: true
+        100:
+          Value: true
+        101:
+          Value: true
+        102:
+          Value: true
+        103:
+          Value: true
+        104:
+          Value: true
+        105:
+          Value: true
+        106:
+          Value: true
+        107:
+          Value: true
+        108:
+          Value: true
+        109:
+          Value: true
+        11:
+          Value: true
+        110:
+          Value: true
+        111:
+          Value: true
+        112:
+          Value: true
+        113:
+          Value: true
+        114:
+          Value: true
+        115:
+          Value: true
+        116:
+          Value: true
+        117:
+          Value: true
+        118:
+          Value: true
+        119:
+          Value: true
+        12:
+          Value: true
+        120:
+          Value: true
+        121:
+          Value: true
+        122:
+          Value: true
+        123:
+          Value: true
+        124:
+          Value: true
+        125:
+          Value: true
+        126:
+          Value: true
+        127:
+          Value: true
+        128:
+          Value: true
+        129:
+          Value: true
+        13:
+          Value: true
+        130:
+          Value: true
+        131:
+          Value: true
+        132:
+          Value: true
+        133:
+          Value: true
+        134:
+          Value: true
+        135:
+          Value: true
+        136:
+          Value: true
+        137:
+          Value: true
+        138:
+          Value: true
+        139:
+          Value: true
+        14:
+          Value: true
+        140:
+          Value: true
+        141:
+          Value: true
+        142:
+          Value: true
+        143:
+          Value: true
+        144:
+          Value: true
+        145:
+          Value: true
+        146:
+          Value: true
+        147:
+          Value: true
+        148:
+          Value: true
+        149:
+          Value: true
+        15:
+          Value: true
+        150:
+          Value: true
+        151:
+          Value: true
+        152:
+          Value: true
+        153:
+          Value: true
+        154:
+          Value: true
+        155:
+          Value: true
+        156:
+          Value: true
+        157:
+          Value: true
+        158:
+          Value: true
+        159:
+          Value: true
+        16:
+          Value: true
+        160:
+          Value: true
+        161:
+          Value: true
+        162:
+          Value: true
+        163:
+          Value: true
+        164:
+          Value: true
+        165:
+          Value: true
+        166:
+          Value: true
+        167:
+          Value: true
+        168:
+          Value: true
+        169:
+          Value: true
+        17:
+          Value: true
+        170:
+          Value: true
+        171:
+          Value: true
+        172:
+          Value: true
+        173:
+          Value: true
+        174:
+          Value: true
+        175:
+          Value: true
+        176:
+          Value: true
+        177:
+          Value: true
+        178:
+          Value: true
+        179:
+          Value: true
+        18:
+          Value: true
+        180:
+          Value: true
+        181:
+          Value: true
+        182:
+          Value: true
+        183:
+          Value: true
+        184:
+          Value: true
+        185:
+          Value: true
+        186:
+          Value: true
+        187:
+          Value: true
+        188:
+          Value: true
+        189:
+          Value: true
+        19:
+          Value: true
+        190:
+          Value: true
+        191:
+          Value: true
+        192:
+          Value: true
+        193:
+          Value: true
+        194:
+          Value: true
+        195:
+          Value: true
+        196:
+          Value: true
+        2:
+          Value: true
+        20:
+          Value: true
+        21:
+          Value: true
+        22:
+          Value: true
+        23:
+          Value: true
+        24:
+          Value: true
+        25:
+          Value: true
+        26:
+          Value: true
+        27:
+          Value: true
+        28:
+          Value: true
+        29:
+          Value: true
+        3:
+          Value: true
+        30:
+          Value: true
+        31:
+          Value: true
+        32:
+          Value: true
+        33:
+          Value: true
+        34:
+          Value: true
+        35:
+          Value: true
+        36:
+          Value: true
+        37:
+          Value: true
+        38:
+          Value: true
+        39:
+          Value: true
+        4:
+          Value: true
+        40:
+          Value: true
+        41:
+          Value: true
+        42:
+          Value: true
+        43:
+          Value: true
+        44:
+          Value: true
+        45:
+          Value: true
+        46:
+          Value: true
+        47:
+          Value: true
+        48:
+          Value: true
+        49:
+          Value: true
+        5:
+          Value: true
+        50:
+          Value: true
+        51:
+          Value: true
+        52:
+          Value: true
+        53:
+          Value: true
+        54:
+          Value: true
+        55:
+          Value: true
+        56:
+          Value: true
+        57:
+          Value: true
+        58:
+          Value: true
+        59:
+          Value: true
+        6:
+          Value: true
+        60:
+          Value: true
+        61:
+          Value: true
+        62:
+          Value: true
+        63:
+          Value: true
+        64:
+          Value: true
+        65:
+          Value: true
+        66:
+          Value: true
+        67:
+          Value: true
+        68:
+          Value: true
+        69:
+          Value: true
+        7:
+          Value: true
+        70:
+          Value: true
+        71:
+          Value: true
+        72:
+          Value: true
+        73:
+          Value: true
+        74:
+          Value: true
+        75:
+          Value: true
+        76:
+          Value: true
+        77:
+          Value: true
+        78:
+          Value: true
+        79:
+          Value: true
+        8:
+          Value: true
+        80:
+          Value: true
+        81:
+          Value: true
+        82:
+          Value: true
+        83:
+          Value: true
+        84:
+          Value: true
+        85:
+          Value: true
+        86:
+          Value: true
+        87:
+          Value: true
+        88:
+          Value: true
+        89:
+          Value: true
+        9:
+          Value: true
+        90:
+          Value: true
+        91:
+          Value: true
+        92:
+          Value: true
+        93:
+          Value: true
+        94:
+          Value: true
+        95:
+          Value: true
+        96:
+          Value: true
+        97:
+          Value: true
+        98:
+          Value: true
+        99:
+          Value: true
         All Enabled: true
         base_footprint:
           Value: true
@@ -93,33 +488,426 @@ Visualization Manager:
           Value: true
         right_wheel_link:
           Value: true
-      Marker Scale: 0.4
+      Marker Scale: 3
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          center_wheel_link:
-            {}
-          housing_link:
-            {}
-          imu_link:
-            {}
-          left_lrf_link:
-            {}
-          left_wheel_link:
-            {}
-          lrf_link:
-            {}
-          right_lrf_link:
-            {}
-          right_wheel_link:
-            {}
         map:
+          0:
+            {}
+          1:
+            {}
+          10:
+            {}
+          100:
+            {}
+          101:
+            {}
+          102:
+            {}
+          103:
+            {}
+          104:
+            {}
+          105:
+            {}
+          106:
+            {}
+          107:
+            {}
+          108:
+            {}
+          109:
+            {}
+          11:
+            {}
+          110:
+            {}
+          111:
+            {}
+          112:
+            {}
+          113:
+            {}
+          114:
+            {}
+          115:
+            {}
+          116:
+            {}
+          117:
+            {}
+          118:
+            {}
+          119:
+            {}
+          12:
+            {}
+          120:
+            {}
+          121:
+            {}
+          122:
+            {}
+          123:
+            {}
+          124:
+            {}
+          125:
+            {}
+          126:
+            {}
+          127:
+            {}
+          128:
+            {}
+          129:
+            {}
+          13:
+            {}
+          130:
+            {}
+          131:
+            {}
+          132:
+            {}
+          133:
+            {}
+          134:
+            {}
+          135:
+            {}
+          136:
+            {}
+          137:
+            {}
+          138:
+            {}
+          139:
+            {}
+          14:
+            {}
+          140:
+            {}
+          141:
+            {}
+          142:
+            {}
+          143:
+            {}
+          144:
+            {}
+          145:
+            {}
+          146:
+            {}
+          147:
+            {}
+          148:
+            {}
+          149:
+            {}
+          15:
+            {}
+          150:
+            {}
+          151:
+            {}
+          152:
+            {}
+          153:
+            {}
+          154:
+            {}
+          155:
+            {}
+          156:
+            {}
+          157:
+            {}
+          158:
+            {}
+          159:
+            {}
+          16:
+            {}
+          160:
+            {}
+          161:
+            {}
+          162:
+            {}
+          163:
+            {}
+          164:
+            {}
+          165:
+            {}
+          166:
+            {}
+          167:
+            {}
+          168:
+            {}
+          169:
+            {}
+          17:
+            {}
+          170:
+            {}
+          171:
+            {}
+          172:
+            {}
+          173:
+            {}
+          174:
+            {}
+          175:
+            {}
+          176:
+            {}
+          177:
+            {}
+          178:
+            {}
+          179:
+            {}
+          18:
+            {}
+          180:
+            {}
+          181:
+            {}
+          182:
+            {}
+          183:
+            {}
+          184:
+            {}
+          185:
+            {}
+          186:
+            {}
+          187:
+            {}
+          188:
+            {}
+          189:
+            {}
+          19:
+            {}
+          190:
+            {}
+          191:
+            {}
+          192:
+            {}
+          193:
+            {}
+          194:
+            {}
+          195:
+            {}
+          196:
+            {}
+          2:
+            {}
+          20:
+            {}
+          21:
+            {}
+          22:
+            {}
+          23:
+            {}
+          24:
+            {}
+          25:
+            {}
+          26:
+            {}
+          27:
+            {}
+          28:
+            {}
+          29:
+            {}
+          3:
+            {}
+          30:
+            {}
+          31:
+            {}
+          32:
+            {}
+          33:
+            {}
+          34:
+            {}
+          35:
+            {}
+          36:
+            {}
+          37:
+            {}
+          38:
+            {}
+          39:
+            {}
+          4:
+            {}
+          40:
+            {}
+          41:
+            {}
+          42:
+            {}
+          43:
+            {}
+          44:
+            {}
+          45:
+            {}
+          46:
+            {}
+          47:
+            {}
+          48:
+            {}
+          49:
+            {}
+          5:
+            {}
+          50:
+            {}
+          51:
+            {}
+          52:
+            {}
+          53:
+            {}
+          54:
+            {}
+          55:
+            {}
+          56:
+            {}
+          57:
+            {}
+          58:
+            {}
+          59:
+            {}
+          6:
+            {}
+          60:
+            {}
+          61:
+            {}
+          62:
+            {}
+          63:
+            {}
+          64:
+            {}
+          65:
+            {}
+          66:
+            {}
+          67:
+            {}
+          68:
+            {}
+          69:
+            {}
+          7:
+            {}
+          70:
+            {}
+          71:
+            {}
+          72:
+            {}
+          73:
+            {}
+          74:
+            {}
+          75:
+            {}
+          76:
+            {}
+          77:
+            {}
+          78:
+            {}
+          79:
+            {}
+          8:
+            {}
+          80:
+            {}
+          81:
+            {}
+          82:
+            {}
+          83:
+            {}
+          84:
+            {}
+          85:
+            {}
+          86:
+            {}
+          87:
+            {}
+          88:
+            {}
+          89:
+            {}
+          9:
+            {}
+          90:
+            {}
+          91:
+            {}
+          92:
+            {}
+          93:
+            {}
+          94:
+            {}
+          95:
+            {}
+          96:
+            {}
+          97:
+            {}
+          98:
+            {}
+          99:
+            {}
           odom:
             base_footprint:
-              {}
+              base_link:
+                center_wheel_link:
+                  {}
+                housing_link:
+                  {}
+                imu_link:
+                  {}
+                left_lrf_link:
+                  {}
+                left_wheel_link:
+                  {}
+                lrf_link:
+                  {}
+                right_lrf_link:
+                  {}
+                right_wheel_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -202,7 +990,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 4.77
+      Angle: 4.75
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
@@ -211,19 +999,19 @@ Visualization Manager:
         Value: false
       Name: Current View
       Near Clip Distance: 0.01
-      Scale: 17.0899
+      Scale: 13.4821
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 12.0097
-      Y: -33.1048
+      X: 13.7021
+      Y: -30.0456
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: true
-  Height: 1056
-  Hide Left Dock: true
+    collapsed: false
+  Height: 1176
+  Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000396fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000002800000396000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000025efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000025e000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000073f0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a0000040efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000040e000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000025efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000025e000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000005cf0000040e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -233,5 +1021,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1855
-  X: 1985
+  X: 65
   Y: 24
