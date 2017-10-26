@@ -148,7 +148,15 @@
     <child link="center_wheel_link"/>
     <origin xyz="0.5 0 -0.075" rpy="-1.57 0 0"/>
   </joint>
-
+  
+  <link name="threed_sensor_link"/>
+  <joint name="base_link_to_threed_sensor_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="threed_sensor_link"/>
+    <origin xyz="0.7 0 0.22 "/>
+  </joint>
+  
+  
   <link name="left_lrf_link"/>
   <joint name="base_link_to_left_lrf_link" type="fixed">
     <parent link="base_link"/>
