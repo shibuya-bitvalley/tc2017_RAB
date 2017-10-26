@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   ypspur_ros
+  roslib
 )
 
 ## System dependencies are found with CMake's conventions
