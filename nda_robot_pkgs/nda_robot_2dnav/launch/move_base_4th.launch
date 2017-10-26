@@ -1,14 +1,12 @@
 <launch>
   <master auto="start"/>
   <!-- MAP SERVER -->
-  <!-- gazebo sim  -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/0929.yaml" />
 
   <!-- AMCL -->
   <include file="$(find nda_robot_2dnav)/launch/amcl/amcl_4th.launch"/>
 
   <!-- MOVE BASE -->
-  <!-- remap the odom topic for local planner -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
   <!-- COST MAP -->
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/costmap_common.yaml" command="load" ns="global_costmap" />
@@ -16,7 +14,8 @@
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/local_costmap.yaml" command="load" />
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/global_costmap.yaml" command="load" />
   <!-- BASE GLOBAL PLANNER -->
-    <rosparam file="$(find nda_robot_2dnav)/params/planner/global/navfn_planner.yaml" command="load" />
+    <!-- <rosparam file="$(find nda_robot_2dnav)/params/planner/global/navfn_planner.yaml" command="load" />  -->
+    <rosparam file="$(find nda_robot_2dnav)/params/planner/global/carrot_planner.yaml" command="load" />
   <!-- BASE LOCAL PLANNER -->
     <rosparam file="$(find nda_robot_2dnav)/params/planner/local/dwa_planner.yaml" command="load" />
   <!-- RECOVERY -->
