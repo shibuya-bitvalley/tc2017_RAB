@@ -1,15 +1,13 @@
 <launch>
   <master auto="start"/>
   <!-- MAP SERVER -->
-  <!-- gazebo sim  -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/tc17/lotteria2goal_modified.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/tc17/tc2017.yaml" />
 
   <!-- AMCL -->
-  <include file="$(find nda_robot_2dnav)/launch/amcl/amcl_lotteria2goal.launch"/>
+  <include file="$(find nda_robot_2dnav)/launch/amcl/amcl_tc2017.launch"/>
 
   <!-- MOVE BASE -->
   <!-- remap the odom topic for local planner -->
-  <node pkg="topic_tools" type="relay" name="relay_odom" args="/odom odom"/>
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
   <!-- COST MAP -->
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/costmap_common.yaml" command="load" ns="global_costmap" />
@@ -29,7 +27,7 @@
     <param name="oscillation_timeout" value="10.0" />
     <param name="clearing_rotation_allowed" value="true" />
   <!-- remap cmd_vel topic for RAB -->
-    <remap from="cmd_vel" to="/cmd_vel"/>
+  <!--  <remap from="cmd_vel" to="/cmd_vel"/>  -->
   </node>
   
   <!-- rviz -->
