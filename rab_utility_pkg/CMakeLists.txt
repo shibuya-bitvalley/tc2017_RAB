@@ -218,3 +218,6 @@ target_link_libraries(map_loader ${catkin_LIBRARIES})
 
 add_executable(path_loader src/path_loader.cpp)
 target_link_libraries(path_loader ${catkin_LIBRARIES})
+
+add_executable(3d_search src/3d_search.cpp)
+target_link_libraries(3d_search ${catkin_LIBRARIES})
