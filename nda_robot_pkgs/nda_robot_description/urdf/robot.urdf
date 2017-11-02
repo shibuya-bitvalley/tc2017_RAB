@@ -6,22 +6,22 @@
   <joint name="base_link_to_base_footprint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.15"/>
+    <origin xyz="0 0 0.11"/>
   </joint>
 
   <link name="housing_link">
     <visual>
       <geometry>
-        <box size="1.0 0.4 1.0"/>
+        <box size="1.075 0.4 0.265"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <box size="1.0 0.4 1.0"/>
+        <box size="1.075 0.4 0.265"/>
       </geometry>
     </collision>
     <inertial>
-	<mass value="20.0"/>
+	<mass value="18.0"/>
 	<inertia ixx="1.9333" ixy="0" ixz="0"
                  iyy="3.3333" iyz="0" izz="1.9333"/>
     </inertial>
@@ -31,11 +31,38 @@
     <mu1 value="0" />
     <mu2 value="0" />
   </gazebo>
-
   <joint name="base_link_to_housing_link" type="fixed">
     <parent link="base_link"/>
     <child link="housing_link"/>
-    <origin xyz="0.25 0 0.5"/>
+    <origin xyz="0.25 0 0.1325"/>
+  </joint>
+  
+  <link name="frame_link">
+  <visual>
+    <geometry>
+      <box size="0.88 0.4 0.775"/>
+    </geometry>
+  </visual>
+  <collision>
+    <geometry>
+      <box size="0.88 0.4 0.775"/>
+    </geometry>
+  </collision>
+  <inertial>
+    <mass value="2.0"/>
+    <inertia ixx="1.9333" ixy="0" ixz="0"
+             iyy="3.3333" iyz="0" izz="1.9333"/>
+  </inertial>
+  </link>
+  <gazebo reference="frame_link">
+    <selfCollide>false</selfCollide>
+    <mu1 value="0" />
+    <mu2 value="0" />
+  </gazebo>
+  <joint name="base_link_to_frame_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="frame_link"/>
+    <origin xyz="0.15 0 0.652"/>
   </joint>
 
   <link name="right_wheel_link">
@@ -153,7 +180,7 @@
   <joint name="base_link_to_threed_sensor_link" type="fixed">
     <parent link="base_link"/>
     <child link="threed_sensor_link"/>
-    <origin xyz="0.75 0 0.22 "/>
+    <origin xyz="0.60 0 0.265 "/>
   </joint>
   
   
@@ -161,7 +188,7 @@
   <joint name="base_link_to_left_lrf_link" type="fixed">
     <parent link="base_link"/>
     <child link="left_lrf_link"/>
-    <origin xyz="0 0.2305 0.2141" rpy="0 0 1.57"/>
+    <origin xyz="0 0.2305 0.137" rpy="0 0 1.57"/>
   </joint>
   <gazebo reference="left_lrf_link">
     <sensor type="ray" name="left_lrf_sensor">
@@ -199,7 +226,7 @@
  <joint name="base_link_to_right_lrf_link" type="fixed">
    <parent link="base_link"/>
    <child link="right_lrf_link"/>
-   <origin xyz="0 -0.2305 0.2141" rpy="0 0 -1.57"/>
+   <origin xyz="0 -0.2305 0.137" rpy="0 0 -1.57"/>
  </joint>
  <gazebo reference="right_lrf_link">
    <sensor type="ray" name="right_lrf_sensor">
@@ -237,7 +264,7 @@
  <joint name="base_link_to_lrf_link" type="fixed">
    <parent link="base_link"/>
    <child link="lrf_link"/>
-   <origin xyz="0 0 0.2141"/>
+   <origin xyz="0 0 0.137"/>
  </joint>
  
  <link name="imu_link"/>
