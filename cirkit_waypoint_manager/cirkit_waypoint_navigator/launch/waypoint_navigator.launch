@@ -1,7 +1,6 @@
 <launch>
 
-  <arg name="waypoint_filename" default="$(find
-cirkit_waypoint_navigator)/waypoints/2017-10-29-12-11-34.csv" />
+  <arg name="waypoint_filename" default="$(find cirkit_waypoint_navigator)/waypoints/tc2017.csv" />
   <arg name="start_waypoint" default="0"/>
 
   <node name="cirkit_waypoint_navigator_node" pkg="cirkit_waypoint_navigator" type="cirkit_waypoint_navigator_node" output="screen">
