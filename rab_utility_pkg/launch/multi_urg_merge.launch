@@ -15,7 +15,7 @@
 	<remap from="most_intense" to="/left/most_intense" />
 	<param name="publish_intensity" type="bool" value="true"/>
 	<param name="publish_multiecho" type="bool" value="true"/>
-	<param name="angle_min" type="double" value="-1.6" />
+	<param name="angle_min" type="double" value="-1.701696" />
 	<param name="angle_max" type="double" value="2.35619449019" />
     </node>
 
@@ -27,7 +27,7 @@
 	<remap from="most_intense" to="/right/most_intense" />
 	<param name="publish_intensity" type="bool" value="true"/>
 	<param name="publish_multiecho" type="bool" value="true"/>	
-	<param name="angle_max" type="double" value="1.6" />
+	<param name="angle_max" type="double" value="1.71042" />
 	<param name="angle_min" type="double" value="-2.35619449019" />
    </node>
 
