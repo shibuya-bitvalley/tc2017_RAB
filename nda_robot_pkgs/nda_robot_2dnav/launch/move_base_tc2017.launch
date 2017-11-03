@@ -1,7 +1,7 @@
 <launch>
   <master auto="start"/>
   <!-- MAP SERVER -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/tc17/tc2017.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nda_robot_2dnav)/map/tc17/tc2017_1028.yaml" />
 
   <!-- AMCL -->
   <include file="$(find nda_robot_2dnav)/launch/amcl/amcl_tc2017.launch"/>
@@ -15,7 +15,7 @@
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/local_costmap.yaml" command="load" />
     <rosparam file="$(find nda_robot_2dnav)/params/costmap/global_costmap.yaml" command="load" />
   <!-- BASE GLOBAL PLANNER -->
-    <rosparam file="$(find nda_robot_2dnav)/params/planner/global/navfn_planner.yaml" command="load" />
+    <rosparam file="$(find nda_robot_2dnav)/params/planner/global/carrot_planner.yaml" command="load" />
   <!-- BASE LOCAL PLANNER -->
     <rosparam file="$(find nda_robot_2dnav)/params/planner/local/dwa_planner.yaml" command="load" />
   <!-- RECOVERY -->
